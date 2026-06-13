@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Fertility Collective — Fertility & Pregnancy Hypnosis, North Reading MA</title>
+<meta name="description" content="The Fertility Collective offers fertility and pregnancy hypnosis, coaching, and guided relaxation with certified hypnotherapist Jacqui Pilla in North Reading, MA. Empowering health strategies for fertility success." />
+<meta name="author" content="The Fertility Collective" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Fertility Collective" />
+<meta property="og:description" content="Empowering health strategies for fertility success" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://thefertilitycollective.net/images/logo.png" />
+<meta property="og:url" content="https://thefertilitycollective.net/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     CONFIG  —  Cameron, edit these two values, that's it.
+     ============================================================ -->
+<script>
+  // 1) Paste the booking link from Google Calendar > Create > Appointment schedule.
+  //    Leave as "" and the "Book" buttons will just scroll to the contact section.
+  window.BOOKING_URL = "";
+
+  // 2) (Optional) Make the contact form send to an inbox without any backend.
+  //    Sign up free at https://formspree.io, create a form, paste the endpoint here
+  //    e.g. "https://formspree.io/f/abcdwxyz". Leave "" to fall back to a mailto: email.
+  window.FORM_ENDPOINT = "";
+
+  window.CONTACT_EMAIL = "fertilitycollectiveinfo@gmail.com";
+</script>
+
+<style>
+:root{
+  --cream:      #FAF5EC;
+  --cream-2:    #F2E8D8;
+  --paper:      #FFFDF8;
+  --ink:        #38332C;
+  --ink-soft:   #6E6557;
+  --sage:       #6C7C5F;
+  --sage-deep:  #46523B;
+  --clay:       #C07A57;
+  --clay-deep:  #A5603F;
+  --blush:      #E8CABA;
+  --line:       #E4D9C6;
+  --shadow:     38 51 35;
+
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans:  "Hanken Grotesk", system-ui, sans-serif;
+
+  --maxw: 1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* warm grain texture overlay across the whole page */
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:2}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
+.eyebrow{
+  font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--clay-deep);
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;
+  font-family:var(--sans);font-weight:600;font-size:.95rem;
+  padding:.85em 1.6em;border-radius:999px;border:1.5px solid transparent;
+  cursor:pointer;transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  line-height:1;
+}
+.btn-primary{background:var(--sage-deep);color:var(--cream)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.55);background:var(--sage)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--sage);color:var(--sage-deep);transform:translateY(-2px)}
+.btn-clay{background:var(--clay);color:#fff}
+.btn-clay:hover{background:var(--clay-deep);transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.5)}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgb(250 245 236 / .82);backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .3s ease, box-shadow .3s ease;
+}
+header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--shadow)/.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:.6em;font-family:var(--serif);font-weight:500;font-size:1.18rem;letter-spacing:-.01em}
+.brand .mark{
+  width:34px;height:34px;border-radius:50%;flex:none;
+  background:radial-gradient(circle at 35% 30%, var(--blush), var(--clay) 75%);
+  box-shadow:inset 0 0 0 2px rgb(255 255 255 /.35);
+}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
+.nav-links a:hover{color:var(--sage-deep)}
+.nav-cta{display:flex;align-items:center;gap:1.2rem}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;font-family:var(--sans);font-weight:600;color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:clamp(60px,9vw,120px) 0 clamp(70px,9vw,130px);overflow:hidden}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.6;z-index:0;pointer-events:none}
+.hero .b1{width:520px;height:520px;top:-160px;right:-140px;background:radial-gradient(circle at 40% 40%, var(--blush), transparent 68%)}
+.hero .b2{width:460px;height:460px;bottom:-200px;left:-160px;background:radial-gradient(circle at 50% 50%, #cdd6bf, transparent 66%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,70px);align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.6rem,6vw,4.5rem);font-weight:400;margin:.35em 0 .3em}
+.hero h1 em{font-style:italic;color:var(--clay-deep)}
+.hero .lede{font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--ink-soft);max-width:34ch;margin-bottom:1.9em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem}
+.hero-figure{position:relative;display:flex;justify-content:center}
+.hero-figure .hero-logo{
+  width:100%;height:auto;max-width:440px;
+  filter:drop-shadow(0 26px 44px rgb(var(--shadow)/.18));
+}
+
+/* trust strip */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream-2)}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:1rem 3rem;justify-content:center;padding:18px 28px;
+  font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--ink-soft);text-transform:uppercase}
+.trust span{display:flex;align-items:center;gap:.5em}
+.trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--clay)}
+
+/* ---------- section scaffolding ---------- */
+section{padding:clamp(64px,9vw,118px) 0;position:relative}
+.sec-head{max-width:680px;margin-bottom:clamp(36px,5vw,58px)}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:400;margin:.3em 0 .4em}
+.sec-head p{color:var(--ink-soft);font-size:1.06rem}
+
+/* ---------- offerings ---------- */
+#offerings{background:var(--paper)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;align-items:stretch}
+.card{
+  display:flex;flex-direction:column;background:var(--cream);
+  border:1px solid var(--line);border-radius:22px;padding:30px 28px 28px;
+  position:relative;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgb(var(--shadow)/.5);border-color:var(--blush)}
+.card.feature{background:linear-gradient(160deg,var(--sage-deep),#3c4733);color:var(--cream);border-color:transparent}
+.card.feature .price-pill{background:rgb(255 255 255 /.16);color:#fff}
+.card.feature .card-meta,.card.feature .card-desc{color:rgb(250 245 236 /.82)}
+.card.feature .card-note{border-color:rgb(255 255 255 /.22);color:rgb(250 245 236 /.7)}
+.badge{
+  position:absolute;top:-12px;left:24px;background:var(--clay);color:#fff;
+  font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:.45em .9em;border-radius:999px;box-shadow:0 8px 18px -8px rgb(var(--shadow)/.7);
+}
+.card h3{font-size:1.34rem;font-weight:500;line-height:1.2;margin-bottom:.5em;min-height:0}
+.price-row{display:flex;flex-wrap:wrap;gap:.45em;margin-bottom:.5em}
+.price-pill{
+  display:inline-flex;align-items:baseline;gap:.3em;background:var(--cream-2);
+  border-radius:10px;padding:.4em .7em;font-weight:700;font-size:.95rem;color:var(--ink);
+}
+.price-pill small{font-weight:600;font-size:.74rem;color:var(--ink-soft)}
+.card-meta{font-size:.82rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--clay-deep);margin-bottom:1em}
+.card-desc{font-size:.95rem;color:var(--ink-soft);margin-bottom:1.1em}
+.dates{margin:0 0 1.2em}
+.dates .dlabel{font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.55em}
+.date-grid{display:flex;flex-wrap:wrap;gap:.4em}
+.date-chip{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.32em .6em;font-size:.8rem;font-weight:600;color:var(--ink)}
+.card.feature .date-chip{background:rgb(255 255 255 /.12);border-color:rgb(255 255 255 /.2);color:#fff}
+.card-note{font-size:.78rem;font-style:italic;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:.9em;margin-bottom:1.1em}
+.card .spacer{flex:1}
+.card .btn{width:100%;justify-content:center}
+
+/* ---------- how it works ---------- */
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px}
+.how-item{position:relative;padding-top:14px}
+.how-num{font-family:var(--serif);font-size:2.4rem;color:var(--blush);line-height:1;margin-bottom:.2em;font-style:italic}
+.how-item h3{font-size:1.18rem;font-weight:600;margin-bottom:.45em}
+.how-item p{font-size:.95rem;color:var(--ink-soft)}
+.how-lead{max-width:60ch;font-size:1.1rem;color:var(--ink-soft);margin-bottom:clamp(36px,5vw,56px)}
+
+/* ---------- about ---------- */
+#about{background:var(--cream-2)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(34px,6vw,72px);align-items:center}
+.about-photo{position:relative}
+.about-photo img{border-radius:24px;width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 36px 70px -38px rgb(var(--shadow)/.6)}
+.about-photo::after{content:"";position:absolute;inset:auto -16px -16px auto;width:62%;height:62%;border:2px solid var(--blush);border-radius:24px;z-index:-1}
+.about-body h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:400;margin:.3em 0 .6em}
+.about-body p{color:var(--ink-soft);margin-bottom:1em;font-size:1.02rem}
+.about-body .sig{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--sage-deep);margin-top:.3em}
+
+/* ---------- booking band ---------- */
+#book{background:linear-gradient(155deg,var(--clay),var(--clay-deep));color:#fff;text-align:center}
+#book h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:400;margin-bottom:.35em}
+#book p{max-width:54ch;margin:0 auto 2em;color:rgb(255 255 255 /.9);font-size:1.08rem}
+#book .btn-light{background:#fff;color:var(--clay-deep)}
+#book .btn-light:hover{transform:translateY(-2px);box-shadow:0 16px 34px -16px rgb(0 0 0 /.4)}
+#book .book-note{margin-top:1.5em;font-size:.9rem;color:rgb(255 255 255 /.82)}
+#book a.under{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(34px,6vw,64px);align-items:start}
+.contact-info .ci{display:flex;gap:.9em;align-items:flex-start;margin-bottom:1.5em}
+.contact-info .ci .ico{width:42px;height:42px;border-radius:12px;background:var(--cream-2);display:grid;place-items:center;flex:none;color:var(--sage-deep)}
+.contact-info .ci .ico svg{width:20px;height:20px}
+.contact-info .ci h4{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.2em}
+.contact-info .ci a,.contact-info .ci p{font-size:1.05rem;color:var(--ink);font-weight:500}
+.contact-info .ci a:hover{color:var(--clay-deep)}
+.form{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,36px)}
+.form .field{margin-bottom:1.1em}
+.form label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.4em;color:var(--ink)}
+.form input,.form textarea{
+  width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);
+  padding:.8em .95em;border:1.5px solid var(--line);border-radius:12px;background:var(--cream);
+  transition:border-color .2s, box-shadow .2s;
+}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgb(108 124 95 /.16)}
+.form textarea{resize:vertical;min-height:120px}
+.form .btn{width:100%;justify-content:center;margin-top:.3em}
+.form-msg{margin-top:1em;font-size:.92rem;font-weight:600;display:none}
+.form-msg.show{display:block}
+.form-msg.ok{color:var(--sage-deep)}
+.form-msg.err{color:var(--clay-deep)}
+
+/* ---------- footer ---------- */
+footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30px}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:36px}
+.foot-brand{font-family:var(--serif);font-size:1.4rem;color:var(--cream);margin-bottom:.4em}
+.foot-grid p{font-size:.92rem;max-width:34ch}
+.foot-col h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(250 245 236 /.6);margin-bottom:.7em}
+.foot-col a{display:block;font-size:.95rem;margin-bottom:.4em;color:var(--cream);opacity:.85}
+.foot-col a:hover{opacity:1}
+.foot-bottom{border-top:1px solid rgb(250 245 236 /.18);padding-top:20px;font-size:.82rem;opacity:.7;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+[data-delay="1"]{transition-delay:.08s}[data-delay="2"]{transition-delay:.16s}
+[data-delay="3"]{transition-delay:.24s}[data-delay="4"]{transition-delay:.32s}
+
+/* ---------- responsive ---------- */
+@media(max-width:880px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:1.2rem;
+    background:var(--cream);padding:24px 28px;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -22px rgb(var(--shadow)/.7)}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero .lede{margin-left:auto;margin-right:auto}
+  .hero-cta{justify-content:center}
+  .hero-figure{max-width:380px;margin:0 auto;order:-1}
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{max-width:380px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true"></span>
+      The Fertility Collective
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#offerings">Offerings</a>
+      <a href="#how">How It Helps</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" data-book href="#contact">Book a Free Consult</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Optimize Wellness &amp; Fertility</span>
+      <h1 class="reveal" data-delay="1">A calmer, more hopeful path to <em>parenthood</em></h1>
+      <p class="lede reveal" data-delay="2">Empowering health strategies for fertility success — through guided hypnosis, coaching, and relaxation that nurture the mind-body connection.</p>
+      <div class="hero-cta reveal" data-delay="3">
+        <a class="btn btn-primary" data-book href="#contact">Book a Free 15-min Consult</a>
+        <a class="btn btn-ghost" href="#offerings">Explore Offerings</a>
+      </div>
+    </div>
+    <div class="hero-figure reveal" data-delay="2">
+      <!-- LOGO / BRAND IMAGE — save the file as images/logo.png -->
+      <img class="hero-logo" src="images/logo.png" alt="The Fertility Collective" />
+    </div>
+  </div>
+</section>
+
+<!-- trust strip -->
+<div class="trust">
+  <div class="wrap">
+    <span>Certified Hypnotherapist</span>
+    <span>Fertility Coach</span>
+    <span>Childbirth Educator</span>
+    <span>North Reading, MA</span>
+  </div>
+</div>
+
+<!-- ================= OFFERINGS ================= -->
+<section id="offerings">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What We Offer</span>
+      <h2>Support for every step of your journey</h2>
+      <p>Group and private sessions designed to help you feel informed, empowered, and supported — whether you're trying to conceive naturally, pursuing IUI or IVF, or preparing for birth.</p>
+    </div>
+
+    <div class="cards">
+      <!-- Card 1: free consult -->
+      <div class="card feature reveal">
+        <span class="badge">Start Here</span>
+        <h3>15-Minute Phone Consultation</h3>
+        <div class="price-row"><span class="price-pill">Free</span></div>
+        <div class="card-meta">15 minutes · Phone</div>
+        <p class="card-desc">A relaxed, no-pressure call to learn more about the offerings and find the best fit for you. The easiest way to begin.</p>
+        <div class="spacer"></div>
+        <a class="btn btn-clay" data-book href="#contact">Book Free Consultation</a>
+      </div>
+
+      <!-- Card 2: fertility group series -->
+      <div class="card reveal" data-delay="1">
+        <h3>Fertility &amp; Wellness Relaxation Series</h3>
+        <div class="price-row"><span class="price-pill">$325 <small>/ 3 small-group sessions</small></span></div>
+        <div class="card-meta">1 hr each · Small group</div>
+        <p class="card-desc">Three guided relaxation sessions using self-hypnosis and visualization tailored to fertility. Learn practical tools to reduce stress, quiet limiting thoughts, and build a positive, hopeful mindset — while connecting with others on a similar path.</p>
+        <div class="dates">
+          <div class="dlabel">Wednesdays, 6–7pm · 3-week series</div>
+          <div class="date-grid">
+            <span class="date-chip">Sep 9 · 16 · 23</span>
+            <span class="date-chip">Oct 7 · 14 · 21</span>
+            <span class="date-chip">Nov 4 · 11 · 18</span>
+            <span class="date-chip">Dec 2 · 9 · 16</span>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <a class="btn btn-ghost" href="#contact">Reserve a Spot</a>
+      </div>
+
+      <!-- Card 3: private coaching -->
+      <div class="card reveal" data-delay="2">
+        <h3>Fertility Coaching &amp; Guided Hypnosis</h3>
+        <div class="price-row"><span class="price-pill">$575 <small>/ 3 private sessions</small></span></div>
+        <div class="card-meta">1 hr 30 min each · Private 1:1</div>
+        <p class="card-desc">Personalized one-on-one sessions to gain clarity, build confidence, and create a positive mindset. Combines tailored fertility coaching with guided hypnosis to quiet limiting thoughts, reduce stress, and strengthen the beliefs that support your goals.</p>
+        <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Fertility Coach.</p>
+        <div class="spacer"></div>
+        <a class="btn btn-ghost" href="#contact">Inquire About Sessions</a>
+      </div>
+
+      <!-- Card 4: pregnancy series -->
+      <div class="card reveal" data-delay="3">
+        <h3>Pregnancy Relaxation Series</h3>
+        <div class="price-row">
+          <span class="price-pill">$325 <small>/ group</small></span>
+          <span class="price-pill">$475 <small>/ private</small></span>
+        </div>
+        <div class="card-meta">1 hr each · Group or Private</div>
+        <p class="card-desc">Gentle self-hypnosis and visualization to support you through pregnancy as you prepare for birth and motherhood. Reduce stress, build confidence, and cultivate a calm, positive mindset — alongside other expectant mothers, or one-on-one.</p>
+        <div class="dates">
+          <div class="dlabel">Thursdays, 6–7pm · 3-week group series</div>
+          <div class="date-grid">
+            <span class="date-chip">Sep 10 · 17 · 24</span>
+            <span class="date-chip">Oct 8 · 15 · 22</span>
+            <span class="date-chip">Nov 5 · 12 · 19</span>
+            <span class="date-chip">Dec 3 · 10 · 17</span>
+          </div>
+        </div>
+        <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Childbirth Educator.</p>
+        <div class="spacer"></div>
+        <a class="btn btn-ghost" href="#contact">Reserve a Spot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT HELPS ================= -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How Fertility Hypnosis Helps</span>
+      <h2>A gentle, supportive approach</h2>
+    </div>
+    <p class="how-lead reveal">The journey to parenthood can be filled with hope, excitement, and at times emotional challenges. Through guided relaxation, visualization, and positive suggestion, this mind-body practice works alongside your natural fertility journey or medical treatments such as IVF.</p>
+    <div class="how-grid">
+      <div class="how-item reveal"><div class="how-num">01</div><h3>Reduce Stress &amp; Restore Balance</h3><p>Chronic stress can affect hormone balance and overall well-being. These sessions help quiet the mind, lower stress, and encourage a sense of calm that supports reproductive health.</p></div>
+      <div class="how-item reveal" data-delay="1"><div class="how-num">02</div><h3>Support Conception &amp; Treatments</h3><p>Research suggests hypnosis used alongside fertility treatments, including IVF embryo transfer, may help improve outcomes — letting you approach treatment with greater confidence and ease.</p></div>
+      <div class="how-item reveal" data-delay="2"><div class="how-num">03</div><h3>Strengthen the Mind-Body Connection</h3><p>Many carry subconscious fears, disappointment, or self-doubt around fertility. Guided hypnosis helps gently release these blocks while fostering trust, hope, and resilience.</p></div>
+      <div class="how-item reveal" data-delay="3"><div class="how-num">04</div><h3>Encourage Optimal Physical Response</h3><p>Through targeted visualization and positive imagery, sessions help your body respond optimally to fertility hormones and create a welcoming environment for implantation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <!-- FOUNDER PHOTO — save the file as images/jacqui.jpg -->
+      <img src="images/jacqui.jpg" alt="Jacqui Pilla, founder of The Fertility Collective" />
+    </div>
+    <div class="about-body reveal" data-delay="1">
+      <span class="eyebrow">Meet Your Guide</span>
+      <h2>Hi, I'm Jacqui Pilla</h2>
+      <p>A certified hypnotherapist, fertility coach, and childbirth educator here at The Fertility Collective. My passion for supporting women on their fertility journeys began years ago, when my husband and I navigated our own path to building our family.</p>
+      <p>After becoming a childbirth educator and doula, I continued my training in fertility-focused hypnosis and built a private practice dedicated to helping women find support, confidence, and calm. Today, I also work with families as a childbirth educator at Stork Ready.</p>
+      <p>I created The Fertility Collective to offer women a nurturing space for education, guidance, and connection with others who understand what they're experiencing. Whether you're conceiving naturally or through assisted treatments, navigating primary or secondary infertility, my sessions are designed to help you feel empowered every step of the way.</p>
+      <p class="sig">It would be my privilege to walk alongside you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOKING BAND ================= -->
+<section id="book">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="color:rgb(255 255 255 / .85)">Ready to Begin?</span>
+    <h2>Book your free consultation</h2>
+    <p>Skip the phone tag — pick a time that works for you and we'll find the right fit together. Prefer to talk first? Reach out any way you like below.</p>
+    <a class="btn btn-light" data-book href="#contact">Schedule Online</a>
+    <div class="book-note">Or text/call <a class="under" href="tel:+19788861869">978-886-1869</a> · email <a class="under" href="mailto:fertilitycollectiveinfo@gmail.com">fertilitycollectiveinfo@gmail.com</a></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Let's connect</h2>
+      <p>Have a question or want to find your fit? Drop a line, and Jacqui will get back to you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="ci">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><h4>Text or Call</h4><a href="tel:+19788861869">978-886-1869</a></div>
+        </div>
+        <div class="ci">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><h4>Email</h4><a href="mailto:fertilitycollectiveinfo@gmail.com">fertilitycollectiveinfo@gmail.com</a></div>
+        </div>
+        <div class="ci">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>In-Person Sessions</h4><p>217 Main Street, North Reading, MA<br><span style="font-size:.88rem;color:var(--ink-soft);font-weight:400">Located adjacent to Stork Ready</span></p></div>
+        </div>
+      </div>
+
+      <form class="form reveal" data-delay="1" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span style="color:var(--ink-soft);font-weight:400">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" />
+        </div>
+        <div class="field">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" placeholder="Tell us a little about what you're looking for…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">The Fertility Collective</div>
+        <p>Empowering health strategies for fertility success, at Stork Ready in North Reading, MA.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#offerings">Offerings</a>
+        <a href="#how">How It Helps</a>
+        <a href="#about">About Jacqui</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <a href="tel:+19788861869">978-886-1869</a>
+        <a href="mailto:fertilitycollectiveinfo@gmail.com">Email Us</a>
+        <a href="#contact">Book a Consult</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> The Fertility Collective — All Rights Reserved.</span>
+      <span>217 Main Street, North Reading, MA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header shadow on scroll
+  var header = document.getElementById('top');
+  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 10); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  var menuBtn = document.getElementById('menuBtn');
+  var navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+  navLinks.addEventListener('click', function(e){ if(e.target.tagName==='A') navLinks.classList.remove('open'); });
+
+  // booking buttons → open Google booking page if configured, else go to contact
+  var BOOKING_URL = (window.BOOKING_URL || '').trim();
+  document.querySelectorAll('[data-book]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      if (BOOKING_URL){
+        e.preventDefault();
+        window.open(BOOKING_URL, '_blank', 'noopener');
+      }
+      // else: default anchor jump to #contact
+    });
+  });
+
+  // scroll reveal
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // contact form: Formspree if configured, else mailto fallback
+  var form = document.getElementById('contactForm');
+  var msg  = document.getElementById('formMsg');
+  var ENDPOINT = (window.FORM_ENDPOINT || '').trim();
+  var EMAIL = (window.CONTACT_EMAIL || '').trim();
+
+  function show(text, ok){ msg.textContent = text; msg.className = 'form-msg show ' + (ok?'ok':'err'); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = form.name.value.trim();
+    var email = form.email.value.trim();
+    var phone = form.phone.value.trim();
+    var message = form.message.value.trim();
+    if(!name || !email){ show('Please add your name and email.', false); return; }
+
+    if(ENDPOINT){
+      var btn = form.querySelector('button');
+      var orig = btn.textContent; btn.textContent = 'Sending…'; btn.disabled = true;
+      fetch(ENDPOINT, {
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body: new FormData(form)
+      }).then(function(r){
+        if(r.ok){ form.reset(); show('Thank you — your message is on its way. Jacqui will be in touch soon.', true); }
+        else { show('Something went wrong. Please email '+EMAIL+' directly.', false); }
+      }).catch(function(){
+        show('Something went wrong. Please email '+EMAIL+' directly.', false);
+      }).finally(function(){ btn.textContent = orig; btn.disabled = false; });
+    } else {
+      // no backend configured — open the user's email client pre-filled
+      var subject = encodeURIComponent('Website inquiry from ' + name);
+      var body = encodeURIComponent(
+        'Name: '+name+'\nEmail: '+email+(phone?('\nPhone: '+phone):'')+'\n\n'+message
+      );
+      window.location.href = 'mailto:'+EMAIL+'?subject='+subject+'&body='+body;
+      show('Opening your email app… if nothing happens, email '+EMAIL+' directly.', true);
+    }
+  });
+})();
+</script>
+</body>
+</html>
