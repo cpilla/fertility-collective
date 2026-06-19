@@ -57,10 +57,10 @@
   --paper:      #FFFFFF;   /* pure white — cards & surfaces */
   --ink:        #3D3A31;   /* soft warm charcoal — body text */
   --ink-soft:   #767061;   /* muted taupe — secondary text */
-  --sage:       #B7C8A4;   /* soft pastel sage (links, hovers, focus) */
-  --sage-deep:  #6E7C55;   /* muted sage (primary buttons, footer, dark sections) */
-  --clay:       #DCB489;   /* light tan accent (decorative fills/badges) */
-  --clay-deep:  #C49A6C;   /* soft tan */
+  --sage:       #CBD9BA;   /* light pastel green — big blocks, hovers, borders */
+  --sage-deep:  #4C7B4F;   /* clean readable green — text accents & buttons */
+  --clay:       #EBDAC2;   /* pale tan accent (decorative fills/badges) */
+  --clay-deep:  #D8C0A0;   /* soft pale tan */
   --blush:      #F1E4D7;   /* pale blush-tan — decorative blobs & accents */
   --line:       #EBE3D6;   /* soft warm border */
   --shadow:     60 62 48;  /* soft warm shadow tint */
@@ -108,12 +108,12 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spac
   cursor:pointer;transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
   line-height:1;
 }
-.btn-primary{background:var(--sage-deep);color:var(--cream)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.55);background:var(--sage);color:var(--ink)}
+.btn-primary{background:var(--sage);color:var(--ink)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.55);background:var(--sage-deep);color:var(--cream)}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--sage);color:var(--sage-deep);transform:translateY(-2px)}
-.btn-clay{background:var(--clay);color:var(--ink)}
-.btn-clay:hover{background:var(--clay-deep);transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.5)}
+.btn-clay{background:var(--sage-deep);color:var(--cream)}
+.btn-clay:hover{background:#3C6440;transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.5)}
 
 /* ---------- header ---------- */
 header{
@@ -142,7 +142,7 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--s
 .hero .b2{width:460px;height:460px;bottom:-200px;left:-160px;background:radial-gradient(circle at 50% 50%, #D7E0CA, transparent 66%)}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,70px);align-items:center;position:relative;z-index:2}
 .hero h1{font-size:clamp(2.6rem,6vw,4.5rem);font-weight:500;margin:.35em 0 .3em}
-.hero h1 em{font-style:italic;color:var(--clay-deep)}
+.hero h1 em{font-style:italic;color:var(--sage-deep)}
 .hero .lede{font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--ink-soft);max-width:34ch;margin-bottom:1.9em}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem}
 .hero-figure{position:relative;display:flex;justify-content:center}
@@ -172,25 +172,25 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 /* free consultation — full-width "start here" banner above the program grid */
 .consult-banner{
   display:flex;align-items:center;gap:28px;
-  background:linear-gradient(150deg,var(--sage-deep),#5C6A41);
-  color:var(--cream);border-radius:22px;padding:28px 34px;margin-bottom:24px;
+  background:linear-gradient(150deg,var(--sage),#DCE6CE);
+  color:var(--ink);border-radius:22px;padding:28px 34px;margin-bottom:24px;
   position:relative;overflow:hidden;
 }
 .consult-banner::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
   border-radius:50%;background:radial-gradient(circle,rgb(255 255 255 /.08),transparent 70%);pointer-events:none}
 .consult-banner .cb-icon{
   width:62px;height:62px;border-radius:50%;flex:none;display:grid;place-items:center;
-  background:rgb(255 255 255 /.14);color:#fff;
+  background:rgb(61 58 49 /.08);color:var(--sage-deep);
 }
 .consult-banner .cb-icon svg{width:28px;height:28px}
 .consult-banner .cb-main{flex:1;min-width:0}
 .consult-banner .cb-tags{display:flex;flex-wrap:wrap;align-items:center;gap:.6em;margin-bottom:.35em}
-.consult-banner .cb-badge{background:var(--clay);color:var(--ink);font-size:.66rem;font-weight:700;
+.consult-banner .cb-badge{background:var(--sage-deep);color:var(--cream);font-size:.66rem;font-weight:700;
   letter-spacing:.12em;text-transform:uppercase;padding:.4em .85em;border-radius:999px}
 .consult-banner .cb-meta{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
-  color:rgb(250 245 236 /.78)}
+  color:rgb(61 58 49 /.7)}
 .consult-banner h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.15;margin-bottom:.25em}
-.consult-banner p{color:rgb(250 245 236 /.85);font-size:.98rem;max-width:60ch;margin:0}
+.consult-banner p{color:rgb(61 58 49 /.8);font-size:.98rem;max-width:60ch;margin:0}
 .consult-banner .btn{flex:none;white-space:nowrap}
 @media(max-width:760px){
   .consult-banner{flex-direction:column;align-items:flex-start;gap:18px;padding:26px 24px}
@@ -260,7 +260,7 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .about-body .sig{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--sage-deep);margin-top:.3em}
 
 /* ---------- booking band ---------- */
-#book{background:linear-gradient(155deg,var(--clay),var(--clay-deep));color:var(--ink);text-align:center}
+#book{background:linear-gradient(155deg,#F5EBDC,#EFE1CE);color:var(--ink);text-align:center}
 #book h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:500;margin-bottom:.35em}
 #book p{max-width:54ch;margin:0 auto 2em;color:var(--ink);font-size:1.08rem}
 #book .btn-light{background:var(--sage-deep);color:var(--cream)}
@@ -275,7 +275,7 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .contact-info .ci .ico svg{width:20px;height:20px}
 .contact-info .ci h4{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.2em}
 .contact-info .ci a,.contact-info .ci p{font-size:1.05rem;color:var(--ink);font-weight:500}
-.contact-info .ci a:hover{color:var(--clay-deep)}
+.contact-info .ci a:hover{color:var(--sage-deep)}
 .form{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,36px)}
 .form .field{margin-bottom:1.1em}
 .form label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.4em;color:var(--ink)}
@@ -290,17 +290,17 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .form-msg{margin-top:1em;font-size:.92rem;font-weight:600;display:none}
 .form-msg.show{display:block}
 .form-msg.ok{color:var(--sage-deep)}
-.form-msg.err{color:var(--clay-deep)}
+.form-msg.err{color:#B5703F}
 
 /* ---------- footer ---------- */
-footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30px}
+footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:36px}
-.foot-brand{font-family:var(--serif);font-size:1.4rem;color:var(--cream);margin-bottom:.4em}
+.foot-brand{font-family:var(--serif);font-size:1.4rem;color:var(--ink);margin-bottom:.4em}
 .foot-grid p{font-size:.92rem;max-width:34ch}
-.foot-col h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(250 245 236 /.6);margin-bottom:.7em}
-.foot-col a{display:block;font-size:.95rem;margin-bottom:.4em;color:var(--cream);opacity:.85}
+.foot-col h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(61 58 49 /.6);margin-bottom:.7em}
+.foot-col a{display:block;font-size:.95rem;margin-bottom:.4em;color:var(--ink);opacity:.85}
 .foot-col a:hover{opacity:1}
-.foot-bottom{border-top:1px solid rgb(250 245 236 /.18);padding-top:20px;font-size:.82rem;opacity:.7;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+.foot-bottom{border-top:1px solid rgb(61 58 49 /.18);padding-top:20px;font-size:.82rem;opacity:.7;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
 
 /* ---------- reveal animation ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
@@ -516,7 +516,7 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
       <span class="eyebrow">Meet Your Guide</span>
       <h2>Hi, I'm Jacqui Pilla</h2>
       <p>A certified hypnotherapist, fertility coach, and childbirth educator here at The Fertility Collective. My passion for supporting women on their fertility journeys began years ago, when my husband and I navigated our own path to building our family.</p>
-      <p>After becoming a childbirth educator and doula, I continued my training in fertility-focused hypnosis and built a private practice dedicated to helping women find support, confidence, and calm. Today, I also work with families as a childbirth educator at Stork Ready.</p>
+      <p>After becoming a childbirth educator and doula, I continued my training in fertility-focused hypnosis and built a private practice dedicated to helping women find support, confidence, and calm. Today, I also work with families as a childbirth educator at <a href="https://www.storkready.com" target="_blank" rel="noopener" style="color:var(--sage-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px">Stork Ready</a>.</p>
       <p>I created The Fertility Collective to offer women a nurturing space for education, guidance, and connection with others who understand what they're experiencing. Whether you're conceiving naturally or through assisted treatments, navigating primary or secondary infertility, my sessions are designed to help you feel empowered every step of the way.</p>
       <p class="sig">It would be my privilege to walk alongside you.</p>
     </div>
@@ -557,7 +557,7 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
         </div>
         <div class="ci">
           <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><h4>In-Person Sessions</h4><p>217 Main Street, North Reading, MA<br><span style="font-size:.88rem;color:var(--ink-soft);font-weight:400">Located adjacent to Stork Ready</span></p></div>
+          <div><h4>In-Person Sessions</h4><p>217 Main Street, North Reading, MA<br><span style="font-size:.88rem;color:var(--ink-soft);font-weight:400">Located adjacent to <a href="https://www.storkready.com" target="_blank" rel="noopener" style="color:var(--sage-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px">Stork Ready</a></span></p></div>
         </div>
       </div>
 
