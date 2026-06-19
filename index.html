@@ -35,8 +35,15 @@
   //    "Comma-separated values (.csv)" > Publish, then paste that URL here.
   //    (A normal "pubhtml" link also works now — the code converts it to CSV.)
   //    Leave "" and the page just uses the dates already written into the HTML below.
-  //    The sheet has two columns: column A = Fertility series, column B = Pregnancy
-  //    series. Each row is one 3-week session. (See "How to update class dates.pdf".)
+  //
+  //    The sheet now has FOUR columns — one per group (column order doesn't
+  //    matter; the code matches on the header text, so keep these words in them):
+  //      "Fertility - Wednesday"   "Fertility - Saturday"
+  //      "Pregnancy - Thursday"    "Pregnancy - Saturday"
+  //    Each row is one 3-week session set. In a cell, just type the three dates
+  //    separated by commas, e.g.   Sep 9, 16, 23   — the page renders that as
+  //    chips ("Sep 9 · 16 · 23"). No special symbols needed.
+  //    (See "How to update class dates.md" for the simple step-by-step.)
   window.SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQLp-HAtoXqvzlXX4lFm5Y8_hN-KhmU7e6cTYixMLextnBN0xBE5jpasHVLprw9QCGRvYDeTam2P9P/pub?gid=1065247598&single=true&output=csv";
 </script>
 
@@ -44,18 +51,19 @@
 :root{
   color-scheme: light only;
 
-  --cream:      #FAF5EC;
-  --cream-2:    #F2E8D8;
-  --paper:      #FFFDF8;
-  --ink:        #38332C;
-  --ink-soft:   #6E6557;
-  --sage:       #6C7C5F;
-  --sage-deep:  #46523B;
-  --clay:       #C07A57;
-  --clay-deep:  #A5603F;
-  --blush:      #E8CABA;
-  --line:       #E4D9C6;
-  --shadow:     38 51 35;
+  /* ---- Palette: soft sage green, warm whites, and tan ---- */
+  --cream:      #FCFAF4;   /* soft warm white — page background */
+  --cream-2:    #F4EEE2;   /* light tan — alternating sections */
+  --paper:      #FFFFFF;   /* pure white — cards & surfaces */
+  --ink:        #3D3A31;   /* soft warm charcoal — body text */
+  --ink-soft:   #767061;   /* muted taupe — secondary text */
+  --sage:       #B7C8A4;   /* soft pastel sage (links, hovers, focus) */
+  --sage-deep:  #6E7C55;   /* muted sage (primary buttons, footer, dark sections) */
+  --clay:       #DCB489;   /* light tan accent (decorative fills/badges) */
+  --clay-deep:  #C49A6C;   /* soft tan */
+  --blush:      #F1E4D7;   /* pale blush-tan — decorative blobs & accents */
+  --line:       #EBE3D6;   /* soft warm border */
+  --shadow:     60 62 48;  /* soft warm shadow tint */
 
   --serif: "Lora", Georgia, "Times New Roman", serif;
   --sans:  "Hanken Grotesk", system-ui, sans-serif;
@@ -89,7 +97,7 @@ body::before{
 h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
 .eyebrow{
   font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--clay-deep);
+  text-transform:uppercase;color:var(--sage-deep);
 }
 
 /* ---------- buttons ---------- */
@@ -101,10 +109,10 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spac
   line-height:1;
 }
 .btn-primary{background:var(--sage-deep);color:var(--cream)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.55);background:var(--sage)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.55);background:var(--sage);color:var(--ink)}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--sage);color:var(--sage-deep);transform:translateY(-2px)}
-.btn-clay{background:var(--clay);color:#fff}
+.btn-clay{background:var(--clay);color:var(--ink)}
 .btn-clay:hover{background:var(--clay-deep);transform:translateY(-2px);box-shadow:0 12px 26px -10px rgb(var(--shadow)/.5)}
 
 /* ---------- header ---------- */
@@ -131,7 +139,7 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--s
 .hero{position:relative;padding:clamp(60px,9vw,120px) 0 clamp(70px,9vw,130px);overflow:hidden}
 .hero .blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.6;z-index:0;pointer-events:none}
 .hero .b1{width:520px;height:520px;top:-160px;right:-140px;background:radial-gradient(circle at 40% 40%, var(--blush), transparent 68%)}
-.hero .b2{width:460px;height:460px;bottom:-200px;left:-160px;background:radial-gradient(circle at 50% 50%, #cdd6bf, transparent 66%)}
+.hero .b2{width:460px;height:460px;bottom:-200px;left:-160px;background:radial-gradient(circle at 50% 50%, #D7E0CA, transparent 66%)}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,70px);align-items:center;position:relative;z-index:2}
 .hero h1{font-size:clamp(2.6rem,6vw,4.5rem);font-weight:500;margin:.35em 0 .3em}
 .hero h1 em{font-style:italic;color:var(--clay-deep)}
@@ -164,7 +172,7 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 /* free consultation — full-width "start here" banner above the program grid */
 .consult-banner{
   display:flex;align-items:center;gap:28px;
-  background:linear-gradient(150deg,var(--sage-deep),#3c4733);
+  background:linear-gradient(150deg,var(--sage-deep),#5C6A41);
   color:var(--cream);border-radius:22px;padding:28px 34px;margin-bottom:24px;
   position:relative;overflow:hidden;
 }
@@ -177,7 +185,7 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .consult-banner .cb-icon svg{width:28px;height:28px}
 .consult-banner .cb-main{flex:1;min-width:0}
 .consult-banner .cb-tags{display:flex;flex-wrap:wrap;align-items:center;gap:.6em;margin-bottom:.35em}
-.consult-banner .cb-badge{background:var(--clay);color:#fff;font-size:.66rem;font-weight:700;
+.consult-banner .cb-badge{background:var(--clay);color:var(--ink);font-size:.66rem;font-weight:700;
   letter-spacing:.12em;text-transform:uppercase;padding:.4em .85em;border-radius:999px}
 .consult-banner .cb-meta{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
   color:rgb(250 245 236 /.78)}
@@ -197,12 +205,12 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
   position:relative;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgb(var(--shadow)/.5);border-color:var(--blush)}
-.card.feature{background:linear-gradient(160deg,var(--sage-deep),#3c4733);color:var(--cream);border-color:transparent}
+.card.feature{background:linear-gradient(160deg,var(--sage-deep),#5C6A41);color:var(--cream);border-color:transparent}
 .card.feature .price-pill{background:rgb(255 255 255 /.16);color:#fff}
 .card.feature .card-meta,.card.feature .card-desc{color:rgb(250 245 236 /.82)}
 .card.feature .card-note{border-color:rgb(255 255 255 /.22);color:rgb(250 245 236 /.7)}
 .badge{
-  position:absolute;top:-12px;left:24px;background:var(--clay);color:#fff;
+  position:absolute;top:-12px;left:24px;background:var(--clay);color:var(--ink);
   font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.45em .9em;border-radius:999px;box-shadow:0 8px 18px -8px rgb(var(--shadow)/.7);
 }
@@ -213,10 +221,19 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
   border-radius:10px;padding:.4em .7em;font-weight:700;font-size:.95rem;color:var(--ink);
 }
 .price-pill small{font-weight:600;font-size:.74rem;color:var(--ink-soft)}
-.card-meta{font-size:.82rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--clay-deep);margin-bottom:1em}
+.card-meta{font-size:.82rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:1em}
 .card-desc{font-size:.95rem;color:var(--ink-soft);margin-bottom:1.1em}
+.price-note{font-size:.74rem;color:var(--ink-soft);margin:-.35em 0 1em;line-height:1.45}
+.card.feature .price-note{color:rgb(250 245 236 /.7)}
 .dates{margin:0 0 1.2em}
-.dates .dlabel{font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.55em}
+.dates-help{font-size:.82rem;color:var(--ink-soft);margin-bottom:1em;line-height:1.5}
+.dates-help strong{color:var(--sage-deep);font-weight:700}
+.card.feature .dates-help,.card.feature .dates-help strong{color:rgb(250 245 236 /.8)}
+.date-group{margin-bottom:1.1em}
+.date-group:last-child{margin-bottom:0}
+.dates .dlabel{display:flex;align-items:center;gap:.5em;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:.55em}
+.dates .dlabel::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--clay);flex:none}
+.card.feature .dates .dlabel{color:#fff}
 .date-grid{display:flex;flex-wrap:wrap;gap:.4em}
 .date-chip{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.32em .6em;font-size:.8rem;font-weight:600;color:var(--ink)}
 .card.feature .date-chip{background:rgb(255 255 255 /.12);border-color:rgb(255 255 255 /.2);color:#fff}
@@ -243,12 +260,12 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .about-body .sig{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--sage-deep);margin-top:.3em}
 
 /* ---------- booking band ---------- */
-#book{background:linear-gradient(155deg,var(--clay),var(--clay-deep));color:#fff;text-align:center}
+#book{background:linear-gradient(155deg,var(--clay),var(--clay-deep));color:var(--ink);text-align:center}
 #book h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:500;margin-bottom:.35em}
-#book p{max-width:54ch;margin:0 auto 2em;color:rgb(255 255 255 /.9);font-size:1.08rem}
-#book .btn-light{background:#fff;color:var(--clay-deep)}
+#book p{max-width:54ch;margin:0 auto 2em;color:var(--ink);font-size:1.08rem}
+#book .btn-light{background:var(--sage-deep);color:var(--cream)}
 #book .btn-light:hover{transform:translateY(-2px);box-shadow:0 16px 34px -16px rgb(0 0 0 /.4)}
-#book .book-note{margin-top:1.5em;font-size:.9rem;color:rgb(255 255 255 /.82)}
+#book .book-note{margin-top:1.5em;font-size:.9rem;color:var(--ink)}
 #book a.under{text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- contact ---------- */
@@ -267,7 +284,7 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
   padding:.8em .95em;border:1.5px solid var(--line);border-radius:12px;background:var(--cream);
   transition:border-color .2s, box-shadow .2s;
 }
-.form input:focus,.form textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgb(108 124 95 /.16)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgb(124 142 110 /.16)}
 .form textarea{resize:vertical;min-height:120px}
 .form .btn{width:100%;justify-content:center;margin-top:.3em}
 .form-msg{margin-top:1em;font-size:.92rem;font-weight:600;display:none}
@@ -393,16 +410,28 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
       <!-- Card 1: fertility group series -->
       <div class="card reveal">
         <h3>Fertility &amp; Wellness Relaxation Series</h3>
-        <div class="price-row"><span class="price-pill">$325 <small>/ 3 small-group sessions</small></span></div>
-        <div class="card-meta">1 hr each · Small group</div>
+        <div class="price-row"><span class="price-pill">$325 <small>/ full 3-session set</small></span></div>
+        <p class="price-note">Covers all 3 weekly sessions — not per session.</p>
+        <div class="card-meta">3 sessions · 1 hr each · Small group</div>
         <p class="card-desc">Three guided relaxation sessions using self-hypnosis and visualization tailored to fertility. Learn practical tools to reduce stress, quiet limiting thoughts, and build a positive, hopeful mindset — while connecting with others on a similar path.</p>
         <div class="dates">
-          <div class="dlabel">Wednesdays, 6–7pm · 3-week series</div>
-          <div class="date-grid" data-series="fertility">
-            <span class="date-chip">Sep 9 · 16 · 23</span>
-            <span class="date-chip">Oct 7 · 14 · 21</span>
-            <span class="date-chip">Nov 4 · 11 · 18</span>
-            <span class="date-chip">Dec 2 · 9 · 16</span>
+          <p class="dates-help">Runs as a <strong>3-week set</strong> — one class a week for three weeks. Choose the Wednesday or Saturday group, then pick whichever start set fits your schedule:</p>
+          <div class="date-group">
+            <div class="dlabel">Wednesday group · 6–7pm</div>
+            <div class="date-grid" data-series="fertility-wed">
+              <span class="date-chip">Sep 9 · 16 · 23</span>
+              <span class="date-chip">Oct 7 · 14 · 21</span>
+              <span class="date-chip">Nov 4 · 11 · 18</span>
+              <span class="date-chip">Dec 2 · 9 · 16</span>
+            </div>
+          </div>
+          <div class="date-group">
+            <div class="dlabel">Saturday group · 9:30–10:30am</div>
+            <div class="date-grid" data-series="fertility-sat">
+              <span class="date-chip">Oct 10 · 17 · 24</span>
+              <span class="date-chip">Nov 7 · 14 · 21</span>
+              <span class="date-chip">Dec 5 · 12 · 19</span>
+            </div>
           </div>
         </div>
         <div class="spacer"></div>
@@ -412,8 +441,9 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
       <!-- Card 2: private coaching -->
       <div class="card reveal" data-delay="1">
         <h3>Fertility Coaching &amp; Guided Hypnosis</h3>
-        <div class="price-row"><span class="price-pill">$575 <small>/ 3 private sessions</small></span></div>
-        <div class="card-meta">1 hr 30 min each · Private 1:1</div>
+        <div class="price-row"><span class="price-pill">$575 <small>/ full 3-session set</small></span></div>
+        <p class="price-note">Covers all 3 private sessions — not per session.</p>
+        <div class="card-meta">3 sessions · 1 hr 30 min each · Private 1:1</div>
         <p class="card-desc">Personalized one-on-one sessions to gain clarity, build confidence, and create a positive mindset. Combines tailored fertility coaching with guided hypnosis to quiet limiting thoughts, reduce stress, and strengthen the beliefs that support your goals.</p>
         <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Fertility Coach.</p>
         <div class="spacer"></div>
@@ -424,18 +454,30 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
       <div class="card reveal" data-delay="2">
         <h3>Pregnancy Relaxation Series</h3>
         <div class="price-row">
-          <span class="price-pill">$325 <small>/ group</small></span>
-          <span class="price-pill">$475 <small>/ private</small></span>
+          <span class="price-pill">$325 <small>/ group · 3-session set</small></span>
+          <span class="price-pill">$475 <small>/ private · 3-session set</small></span>
         </div>
-        <div class="card-meta">1 hr each · Group or Private</div>
+        <p class="price-note">Each price covers all 3 weekly sessions — not per session.</p>
+        <div class="card-meta">3 sessions · 1 hr each · Group or Private</div>
         <p class="card-desc">Gentle self-hypnosis and visualization to support you through pregnancy as you prepare for birth and motherhood. Reduce stress, build confidence, and cultivate a calm, positive mindset — alongside other expectant mothers, or one-on-one.</p>
         <div class="dates">
-          <div class="dlabel">Thursdays, 6–7pm · 3-week group series</div>
-          <div class="date-grid" data-series="pregnancy">
-            <span class="date-chip">Sep 10 · 17 · 24</span>
-            <span class="date-chip">Oct 8 · 15 · 22</span>
-            <span class="date-chip">Nov 5 · 12 · 19</span>
-            <span class="date-chip">Dec 3 · 10 · 17</span>
+          <p class="dates-help">Group program runs as a <strong>3-week set</strong> — one class a week for three weeks. Choose the Thursday or Saturday group, then pick whichever start set fits your schedule:</p>
+          <div class="date-group">
+            <div class="dlabel">Thursday group · 6–7pm</div>
+            <div class="date-grid" data-series="pregnancy-thu">
+              <span class="date-chip">Sep 10 · 17 · 24</span>
+              <span class="date-chip">Oct 8 · 15 · 22</span>
+              <span class="date-chip">Nov 5 · 12 · 19</span>
+              <span class="date-chip">Dec 3 · 10 · 17</span>
+            </div>
+          </div>
+          <div class="date-group">
+            <div class="dlabel">Saturday group · 11:30am–12:30pm</div>
+            <div class="date-grid" data-series="pregnancy-sat">
+              <span class="date-chip">Oct 10 · 17 · 24</span>
+              <span class="date-chip">Nov 7 · 14 · 21</span>
+              <span class="date-chip">Dec 5 · 12 · 19</span>
+            </div>
           </div>
         </div>
         <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Childbirth Educator.</p>
@@ -484,12 +526,12 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
 <!-- ================= BOOKING BAND ================= -->
 <section id="book">
   <div class="wrap reveal">
-    <span class="eyebrow" style="color:rgb(255 255 255 / .85)">Ready to Begin?</span>
+    <span class="eyebrow">Ready to Begin?</span>
     <h2>Let's find the right fit</h2>
     <p>No online booking to fuss with — just reach out and Jacqui will help you choose the right session and get you scheduled. She'd love to hear from you.</p>
     <div style="display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center">
       <a class="btn btn-light" href="tel:+19788861869">Call 978-886-1869</a>
-      <a class="btn btn-light" style="background:transparent;color:#fff;border-color:rgb(255 255 255 / .6)" href="mailto:fertilitycollectiveinfo@gmail.com">Email Jacqui</a>
+      <a class="btn btn-light" style="background:transparent;color:var(--ink);border-color:rgb(61 58 49 / .4)" href="mailto:fertilitycollectiveinfo@gmail.com">Email Jacqui</a>
     </div>
     <div class="book-note">Prefer a form? Scroll down to the <a class="under" href="#contact">contact section</a>.</div>
   </div>
@@ -641,8 +683,15 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
   /* ---------- live class dates from a published Google Sheet (optional) ----------
      The HTML already contains the current dates as a fallback. If a sheet URL is
      configured and reachable, those chips get replaced with the sheet's contents.
-     Sheet layout: column A = Fertility series, column B = Pregnancy series.
-     Row 1 is treated as a header and skipped. Each non-empty cell becomes one chip. */
+     Sheet layout: one column per group. Each column is matched to a group by its
+     header text (row 1), so column order is flexible and an older two-column sheet
+     ("Fertility", "Pregnancy") still fills the weekday tracks correctly:
+        header has "fertility" + "saturday"  -> fertility-sat
+        header has "fertility"               -> fertility-wed
+        header has "pregnancy" + "saturday"  -> pregnancy-sat
+        header has "pregnancy"               -> pregnancy-thu
+     Row 1 is the header and is skipped. Each non-empty cell becomes one chip;
+     commas inside a cell are shown as " · " (so Jacqui types "Sep 9, 16, 23"). */
   var SHEET_CSV_URL = (window.SHEET_CSV_URL || '').trim();
   // Be forgiving: if a Google "publish to web" page link (pubhtml) was pasted,
   // convert it to the CSV output the parser expects.
@@ -677,9 +726,21 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
     chips.forEach(function(txt){
       var span = document.createElement('span');
       span.className = 'date-chip';
-      span.textContent = txt;           // textContent — no HTML injection from the sheet
+      // commas → " · " so Jacqui can just type "Sep 9, 16, 23" in the sheet.
+      // textContent (not innerHTML) — no HTML injection from the sheet.
+      span.textContent = txt.replace(/\s*,\s*/g, ' · ');
       grid.appendChild(span);
     });
+  }
+
+  // Decide which group a sheet column belongs to, based on its header text.
+  function seriesForHeader(header){
+    var h = (header || '').toLowerCase();
+    var prog = /pregnan/.test(h) ? 'pregnancy' : (/fertil/.test(h) ? 'fertility' : null);
+    if(!prog) return null;
+    var sat = /sat/.test(h);
+    if(prog === 'fertility') return sat ? 'fertility-sat' : 'fertility-wed';
+    return sat ? 'pregnancy-sat' : 'pregnancy-thu';
   }
 
   if(SHEET_CSV_URL){
@@ -688,14 +749,18 @@ footer{background:var(--sage-deep);color:rgb(250 245 236 /.85);padding:54px 0 30
       .then(function(csv){
         var rows = parseCSV(csv);
         if(rows.length < 2) return;     // header only / empty → keep fallback
-        var fertility = [], pregnancy = [];
+        // Map each column to a group using its header, then collect each column's
+        // non-empty cells in order.
+        var colSeries = rows[0].map(seriesForHeader);
+        var buckets = {};               // series key -> array of cell strings
         rows.slice(1).forEach(function(r){
-          var a = (r[0] || '').trim(), b = (r[1] || '').trim();
-          if(a) fertility.push(a);
-          if(b) pregnancy.push(b);
+          colSeries.forEach(function(series, idx){
+            if(!series) return;
+            var val = (r[idx] || '').trim();
+            if(val){ (buckets[series] = buckets[series] || []).push(val); }
+          });
         });
-        renderChips('fertility', fertility);
-        renderChips('pregnancy', pregnancy);
+        Object.keys(buckets).forEach(function(series){ renderChips(series, buckets[series]); });
       })
       .catch(function(){ /* unreachable/misconfigured → silently keep the baked-in dates */ });
   }
