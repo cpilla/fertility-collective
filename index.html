@@ -23,14 +23,13 @@
      CONFIG  —  Cameron, edit these two values, that's it.
      ============================================================ -->
 <script>
-  // 1) Contact-form delivery. This uses FormSubmit.co — a free service that needs
-  //    NO account or signup: it simply emails each submission to the address below.
-  //    IMPORTANT one-time step: the very first time someone submits the form,
-  //    FormSubmit sends a confirmation email to CONTACT_EMAIL. Click the link in
-  //    that email once to activate delivery; every submission after that arrives
-  //    automatically. Leave FORM_ENDPOINT "" to fall back to opening a mailto: draft.
+  // 1) Contact-form delivery via Web3Forms (free, no activation step). Submissions
+  //    are routed to your inbox by the "access_key" hidden field in the form below
+  //    (search for access_key). The key is tied to fertilitycollectiveinfo@gmail.com,
+  //    so to change the destination email, get a new key at https://web3forms.com.
+  //    Leave FORM_ENDPOINT "" to fall back to opening a mailto: draft instead.
   window.CONTACT_EMAIL = "fertilitycollectiveinfo@gmail.com";
-  window.FORM_ENDPOINT = "https://formsubmit.co/ajax/" + window.CONTACT_EMAIL;
+  window.FORM_ENDPOINT = "https://api.web3forms.com/submit";
 
   // 2) (Optional) Let Jacqui edit the class dates herself from a Google Sheet.
   //    Requirement: the sheet's General access must be "Anyone with the link → Viewer".
@@ -573,9 +572,11 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
       </div>
 
       <form class="form reveal" data-delay="1" id="contactForm" novalidate>
-        <input type="hidden" name="_subject" value="New inquiry from The Fertility Collective website" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="access_key" value="a054d4ad-31a0-4f9c-bd22-3bc43e637e3a" />
+        <input type="hidden" name="subject" value="New inquiry from The Fertility Collective website" />
+        <input type="hidden" name="from_name" value="The Fertility Collective website" />
+        <!-- spam honeypot: stays empty for real people; bots that tick it are rejected -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" autocomplete="name" required />
