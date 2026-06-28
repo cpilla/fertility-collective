@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light only" />
-<title>The Fertility Collective — Fertility & Pregnancy Hypnosis, North Reading MA</title>
+<title>The Fertility Collective | Fertility & Pregnancy Hypnosis, North Reading MA</title>
 <meta name="description" content="The Fertility Collective offers fertility and pregnancy hypnosis, coaching, and guided relaxation with certified hypnotherapist Jacqui Pilla in North Reading, MA. Empowering health strategies for fertility success." />
 <meta name="author" content="The Fertility Collective" />
 
@@ -17,18 +17,20 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ============================================================
      CONFIG  —  Cameron, edit these two values, that's it.
      ============================================================ -->
 <script>
-  // 1) (Optional) Make the contact form send to an inbox without any backend.
-  //    Sign up free at https://formspree.io, create a form, paste the endpoint here
-  //    e.g. "https://formspree.io/f/abcdwxyz". Leave "" to fall back to a mailto: email.
-  window.FORM_ENDPOINT = "";
-
+  // 1) Contact-form delivery. This uses FormSubmit.co — a free service that needs
+  //    NO account or signup: it simply emails each submission to the address below.
+  //    IMPORTANT one-time step: the very first time someone submits the form,
+  //    FormSubmit sends a confirmation email to CONTACT_EMAIL. Click the link in
+  //    that email once to activate delivery; every submission after that arrives
+  //    automatically. Leave FORM_ENDPOINT "" to fall back to opening a mailto: draft.
   window.CONTACT_EMAIL = "fertilitycollectiveinfo@gmail.com";
+  window.FORM_ENDPOINT = "https://formsubmit.co/ajax/" + window.CONTACT_EMAIL;
 
   // 2) (Optional) Let Jacqui edit the class dates herself from a Google Sheet.
   //    Requirement: the sheet's General access must be "Anyone with the link → Viewer".
@@ -66,7 +68,7 @@
   --shadow:     60 62 48;  /* soft warm shadow tint */
 
   --serif: "Lora", Georgia, "Times New Roman", serif;
-  --sans:  "Hanken Grotesk", system-ui, sans-serif;
+  --sans:  "Comfortaa", system-ui, sans-serif;
 
   --maxw: 1180px;
 }
@@ -77,7 +79,8 @@ body{
   font-family:var(--sans);
   color:var(--ink);
   background:var(--cream);
-  line-height:1.65;
+  line-height:1.7;
+  letter-spacing:-.012em;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
@@ -122,12 +125,16 @@ header{
   border-bottom:1px solid transparent;transition:border-color .3s ease, box-shadow .3s ease;
 }
 header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--shadow)/.6)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:.6em;font-family:var(--serif);font-weight:500;font-size:1.18rem;letter-spacing:-.01em}
-.brand .mark{
-  width:34px;height:34px;border-radius:50%;flex:none;
-  background:radial-gradient(circle at 35% 30%, var(--blush), var(--clay) 75%);
-  box-shadow:inset 0 0 0 2px rgb(255 255 255 /.35);
+.nav{display:flex;align-items:center;justify-content:space-between;height:86px}
+.brand{display:flex;align-items:center;gap:.55em;font-family:var(--serif);font-weight:500;font-size:.92rem;letter-spacing:-.01em}
+.brand .brand-logo{
+  height:62px;width:auto;flex:none;
+  filter:drop-shadow(0 6px 12px rgb(var(--shadow)/.18));
+}
+.brand .brand-name{color:var(--ink-soft);max-width:8.5em;line-height:1.15}
+@media(max-width:480px){
+  .brand .brand-logo{height:52px}
+  .brand .brand-name{font-size:.82rem}
 }
 .nav-links{display:flex;align-items:center;gap:2rem}
 .nav-links a{font-size:.92rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
@@ -162,7 +169,7 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--s
 section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .sec-head{max-width:680px;margin-bottom:clamp(36px,5vw,58px)}
 .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.sec-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:500;margin:.3em 0 .4em}
+.sec-head h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:500;margin:.3em 0 .4em}
 .sec-head p{color:var(--ink-soft);font-size:1.06rem}
 
 /* ---------- offerings ---------- */
@@ -251,17 +258,17 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 
 /* ---------- about ---------- */
 #about{background:var(--cream-2)}
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(34px,6vw,72px);align-items:center}
-.about-photo{position:relative}
+.about-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:clamp(34px,6vw,72px);align-items:center}
+.about-photo{position:relative;max-width:300px}
 .about-photo img{border-radius:24px;width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 36px 70px -38px rgb(var(--shadow)/.6)}
 .about-photo::after{content:"";position:absolute;inset:auto -16px -16px auto;width:62%;height:62%;border:2px solid var(--blush);border-radius:24px;z-index:-1}
-.about-body h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:500;margin:.3em 0 .6em}
+.about-body h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:500;margin:.3em 0 .6em}
 .about-body p{color:var(--ink-soft);margin-bottom:1em;font-size:1.02rem}
 .about-body .sig{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--sage-deep);margin-top:.3em}
 
 /* ---------- booking band ---------- */
 #book{background:linear-gradient(155deg,#F5EBDC,#EFE1CE);color:var(--ink);text-align:center}
-#book h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:500;margin-bottom:.35em}
+#book h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:500;margin-bottom:.35em}
 #book p{max-width:54ch;margin:0 auto 2em;color:var(--ink);font-size:1.08rem}
 #book .btn-light{background:var(--sage-deep);color:var(--cream)}
 #book .btn-light:hover{transform:translateY(-2px);box-shadow:0 16px 34px -16px rgb(0 0 0 /.4)}
@@ -312,7 +319,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 @media(max-width:880px){
   .nav-links{display:none}
   .menu-btn{display:block}
-  .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:1.2rem;
+  .nav-links.open{display:flex;position:absolute;top:86px;left:0;right:0;flex-direction:column;gap:1.2rem;
     background:var(--cream);padding:24px 28px;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -22px rgb(var(--shadow)/.7)}
   .hero-grid{grid-template-columns:1fr;text-align:center}
   .hero .lede{margin-left:auto;margin-right:auto}
@@ -334,8 +341,8 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 <header id="top">
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <span class="mark" aria-hidden="true"></span>
-      The Fertility Collective
+      <img class="brand-logo" src="images/logo.png" alt="The Fertility Collective" />
+      <span class="brand-name">The Fertility Collective</span>
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#offerings">Offerings</a>
@@ -358,7 +365,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     <div>
       <span class="eyebrow reveal">Optimize Wellness &amp; Fertility</span>
       <h1 class="reveal" data-delay="1">A calmer, more hopeful path to <em>parenthood</em></h1>
-      <p class="lede reveal" data-delay="2">Empowering health strategies for fertility success — through guided hypnosis, coaching, and relaxation that nurture the mind-body connection.</p>
+      <p class="lede reveal" data-delay="2">Empowering health strategies for fertility success, through guided hypnosis, coaching, and relaxation that nurture the mind-body connection.</p>
       <div class="hero-cta reveal" data-delay="3">
         <a class="btn btn-primary" href="#contact">Get in Touch</a>
         <a class="btn btn-ghost" href="#offerings">Explore Offerings</a>
@@ -387,7 +394,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     <div class="sec-head reveal">
       <span class="eyebrow">What We Offer</span>
       <h2>Support for every step of your journey</h2>
-      <p>Group and private sessions designed to help you feel informed, empowered, and supported — whether you're trying to conceive naturally, pursuing IUI or IVF, or preparing for birth.</p>
+      <p>Small-group and private sessions designed to help you feel informed, empowered, and supported, whether you're trying to conceive naturally, pursuing IUI or IVF, or preparing for birth.</p>
     </div>
 
     <!-- Free consultation — featured banner -->
@@ -401,23 +408,23 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
           <span class="cb-meta">Free · 15 minutes · Phone</span>
         </div>
         <h3>Not sure where to begin? Start with a free consultation</h3>
-        <p>A relaxed, no-pressure call to learn more about the offerings and find the best fit for you — the easiest way to begin.</p>
+        <p>A relaxed, no-pressure call to learn more about the offerings and find the best fit for you, the easiest way to begin.</p>
       </div>
-      <a class="btn btn-clay" href="#contact">Call or Email to Book</a>
+      <a class="btn btn-clay" href="#contact">Call, Text, or Email to Book</a>
     </div>
 
     <div class="cards">
       <!-- Card 1: fertility group series -->
       <div class="card reveal">
         <h3>Fertility &amp; Wellness Relaxation Series</h3>
-        <div class="price-row"><span class="price-pill">$325 <small>/ full 3-session set</small></span></div>
-        <p class="price-note">Covers all 3 weekly sessions — not per session.</p>
+        <div class="price-row"><span class="price-pill">$325 <small>/ 3 session small-group</small></span></div>
+        <p class="price-note">Covers all 3 weekly sessions, not per session. Payment by Venmo only.</p>
         <div class="card-meta">3 sessions · 1 hr each · Small group</div>
-        <p class="card-desc">Three guided relaxation sessions using self-hypnosis and visualization tailored to fertility. Learn practical tools to reduce stress, quiet limiting thoughts, and build a positive, hopeful mindset — while connecting with others on a similar path.</p>
+        <p class="card-desc">Three guided relaxation sessions using self-hypnosis and visualization tailored to fertility. Learn practical tools to reduce stress, quiet limiting thoughts, and build a positive, hopeful mindset, while connecting with others on a similar path.</p>
         <div class="dates">
-          <p class="dates-help">Runs as a <strong>3-week set</strong> — one class a week for three weeks. Choose the Wednesday or Saturday group, then pick whichever start set fits your schedule:</p>
+          <p class="dates-help">Runs as a <strong>3-week set</strong>, one class a week for three weeks. Choose the Wednesday or Saturday small group, then pick whichever start set fits your schedule:</p>
           <div class="date-group">
-            <div class="dlabel">Wednesday group · 6–7pm</div>
+            <div class="dlabel">Wednesday small group · 6–7pm</div>
             <div class="date-grid" data-series="fertility-wed">
               <span class="date-chip">Sep 9 · 16 · 23</span>
               <span class="date-chip">Oct 7 · 14 · 21</span>
@@ -426,7 +433,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
             </div>
           </div>
           <div class="date-group">
-            <div class="dlabel">Saturday group · 9:30–10:30am</div>
+            <div class="dlabel">Saturday small group · 9:30–10:30am</div>
             <div class="date-grid" data-series="fertility-sat">
               <span class="date-chip">Oct 10 · 17 · 24</span>
               <span class="date-chip">Nov 7 · 14 · 21</span>
@@ -435,35 +442,35 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
           </div>
         </div>
         <div class="spacer"></div>
-        <a class="btn btn-ghost" href="#contact">Reserve a Spot</a>
+        <a class="btn btn-ghost" href="#contact">Call, Text, or Email to Reserve</a>
       </div>
 
       <!-- Card 2: private coaching -->
       <div class="card reveal" data-delay="1">
         <h3>Fertility Coaching &amp; Guided Hypnosis</h3>
-        <div class="price-row"><span class="price-pill">$575 <small>/ full 3-session set</small></span></div>
-        <p class="price-note">Covers all 3 private sessions — not per session.</p>
+        <div class="price-row"><span class="price-pill">$575 <small>/ 3 session private</small></span></div>
+        <p class="price-note">Covers all 3 private sessions, not per session. Payment by Venmo only.</p>
         <div class="card-meta">3 sessions · 1 hr 30 min each · Private 1:1</div>
         <p class="card-desc">Personalized one-on-one sessions to gain clarity, build confidence, and create a positive mindset. Combines tailored fertility coaching with guided hypnosis to quiet limiting thoughts, reduce stress, and strengthen the beliefs that support your goals.</p>
         <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Fertility Coach.</p>
         <div class="spacer"></div>
-        <a class="btn btn-ghost" href="#contact">Inquire About Sessions</a>
+        <a class="btn btn-ghost" href="#contact">Call, Text, or Email to Inquire</a>
       </div>
 
       <!-- Card 3: pregnancy series -->
       <div class="card reveal" data-delay="2">
         <h3>Pregnancy Relaxation Series</h3>
         <div class="price-row">
-          <span class="price-pill">$325 <small>/ group · 3-session set</small></span>
-          <span class="price-pill">$475 <small>/ private · 3-session set</small></span>
+          <span class="price-pill">$325 <small>/ 3 session small-group</small></span>
+          <span class="price-pill">$475 <small>/ 3 session private</small></span>
         </div>
-        <p class="price-note">Each price covers all 3 weekly sessions — not per session.</p>
-        <div class="card-meta">3 sessions · 1 hr each · Group or Private</div>
-        <p class="card-desc">Gentle self-hypnosis and visualization to support you through pregnancy as you prepare for birth and motherhood. Reduce stress, build confidence, and cultivate a calm, positive mindset — alongside other expectant mothers, or one-on-one.</p>
+        <p class="price-note">Each price covers all 3 weekly sessions, not per session. Payment by Venmo only.</p>
+        <div class="card-meta">3 sessions · 1 hr each · Small group or Private</div>
+        <p class="card-desc">Gentle self-hypnosis and visualization to support you through pregnancy as you prepare for birth and motherhood. Reduce stress, build confidence, and cultivate a calm, positive mindset, alongside other expectant mothers, or one-on-one.</p>
         <div class="dates">
-          <p class="dates-help">Group program runs as a <strong>3-week set</strong> — one class a week for three weeks. Choose the Thursday or Saturday group, then pick whichever start set fits your schedule:</p>
+          <p class="dates-help">Small-group program runs as a <strong>3-week set</strong>, one class a week for three weeks. Choose the Thursday or Saturday small group, then pick whichever start set fits your schedule:</p>
           <div class="date-group">
-            <div class="dlabel">Thursday group · 6–7pm</div>
+            <div class="dlabel">Thursday small group · 6–7pm</div>
             <div class="date-grid" data-series="pregnancy-thu">
               <span class="date-chip">Sep 10 · 17 · 24</span>
               <span class="date-chip">Oct 8 · 15 · 22</span>
@@ -472,7 +479,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
             </div>
           </div>
           <div class="date-group">
-            <div class="dlabel">Saturday group · 11:30am–12:30pm</div>
+            <div class="dlabel">Saturday small group · 11:30am–12:30pm</div>
             <div class="date-grid" data-series="pregnancy-sat">
               <span class="date-chip">Oct 10 · 17 · 24</span>
               <span class="date-chip">Nov 7 · 14 · 21</span>
@@ -482,7 +489,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
         </div>
         <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Childbirth Educator.</p>
         <div class="spacer"></div>
-        <a class="btn btn-ghost" href="#contact">Reserve a Spot</a>
+        <a class="btn btn-ghost" href="#contact">Call, Text, or Email to Reserve</a>
       </div>
     </div>
   </div>
@@ -498,7 +505,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     <p class="how-lead reveal">The journey to parenthood can be filled with hope, excitement, and at times emotional challenges. Through guided relaxation, visualization, and positive suggestion, this mind-body practice works alongside your natural fertility journey or medical treatments such as IVF.</p>
     <div class="how-grid">
       <div class="how-item reveal"><div class="how-num">01</div><h3>Reduce Stress &amp; Restore Balance</h3><p>Chronic stress can affect hormone balance and overall well-being. These sessions help quiet the mind, lower stress, and encourage a sense of calm that supports reproductive health.</p></div>
-      <div class="how-item reveal" data-delay="1"><div class="how-num">02</div><h3>Support Conception &amp; Treatments</h3><p>Research suggests hypnosis used alongside fertility treatments, including IVF embryo transfer, may help improve outcomes — letting you approach treatment with greater confidence and ease.</p></div>
+      <div class="how-item reveal" data-delay="1"><div class="how-num">02</div><h3>Support Conception &amp; Treatments</h3><p>Research suggests hypnosis used alongside fertility treatments, including IVF embryo transfer, may help improve outcomes, letting you approach treatment with greater confidence and ease.</p></div>
       <div class="how-item reveal" data-delay="2"><div class="how-num">03</div><h3>Strengthen the Mind-Body Connection</h3><p>Many carry subconscious fears, disappointment, or self-doubt around fertility. Guided hypnosis helps gently release these blocks while fostering trust, hope, and resilience.</p></div>
       <div class="how-item reveal" data-delay="3"><div class="how-num">04</div><h3>Encourage Optimal Physical Response</h3><p>Through targeted visualization and positive imagery, sessions help your body respond optimally to fertility hormones and create a welcoming environment for implantation.</p></div>
     </div>
@@ -528,12 +535,12 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
   <div class="wrap reveal">
     <span class="eyebrow">Ready to Begin?</span>
     <h2>Let's find the right fit</h2>
-    <p>No online booking to fuss with — just reach out and Jacqui will help you choose the right session and get you scheduled. She'd love to hear from you.</p>
+    <p>There's no online booking to fuss with. To reserve a spot, just call, text, or email Jacqui and she'll help you choose the right session and get you scheduled. She'd love to hear from you.</p>
     <div style="display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center">
-      <a class="btn btn-light" href="tel:+19788861869">Call 978-886-1869</a>
+      <a class="btn btn-light" href="tel:+19788861869">Call or Text 978-886-1869</a>
       <a class="btn btn-light" style="background:transparent;color:var(--ink);border-color:rgb(61 58 49 / .4)" href="mailto:fertilitycollectiveinfo@gmail.com">Email Jacqui</a>
     </div>
-    <div class="book-note">Prefer a form? Scroll down to the <a class="under" href="#contact">contact section</a>.</div>
+    <div class="book-note">Payment is by Venmo only, to <a class="under" href="https://venmo.com/u/Jacqui-Pilla" target="_blank" rel="noopener">@Jacqui-Pilla</a>. Prefer a form? Scroll down to the <a class="under" href="#contact">contact section</a>.</div>
   </div>
 </section>
 
@@ -559,9 +566,16 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
           <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div><h4>In-Person Sessions</h4><p>217 Main Street, North Reading, MA<br><span style="font-size:.88rem;color:var(--ink-soft);font-weight:400">Located adjacent to <a href="https://www.storkready.com" target="_blank" rel="noopener" style="color:var(--sage-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px">Stork Ready</a></span></p></div>
         </div>
+        <div class="ci">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div><h4>Payment</h4><a href="https://venmo.com/u/Jacqui-Pilla" target="_blank" rel="noopener">Venmo only · @Jacqui-Pilla</a></div>
+        </div>
       </div>
 
       <form class="form reveal" data-delay="1" id="contactForm" novalidate>
+        <input type="hidden" name="_subject" value="New inquiry from The Fertility Collective website" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" autocomplete="name" required />
@@ -608,7 +622,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© <span id="yr"></span> The Fertility Collective — All Rights Reserved.</span>
+      <span>© <span id="yr"></span> The Fertility Collective. All Rights Reserved.</span>
       <span>217 Main Street, North Reading, MA</span>
     </div>
   </div>
@@ -664,7 +678,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
         headers:{'Accept':'application/json'},
         body: new FormData(form)
       }).then(function(r){
-        if(r.ok){ form.reset(); show('Thank you — your message is on its way. Jacqui will be in touch soon.', true); }
+        if(r.ok){ form.reset(); show('Thank you, your message is on its way. Jacqui will be in touch soon.', true); }
         else { show('Something went wrong. Please email '+EMAIL+' directly.', false); }
       }).catch(function(){
         show('Something went wrong. Please email '+EMAIL+' directly.', false);
