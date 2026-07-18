@@ -157,6 +157,12 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--s
   filter:drop-shadow(0 26px 44px rgb(var(--shadow)/.18));
 }
 
+/* ---------- intro ---------- */
+#intro{padding:clamp(16px,4vw,44px) 0 clamp(50px,7vw,90px)}
+#intro .intro-copy{max-width:760px;margin:0 auto;text-align:center}
+#intro .intro-copy p{color:var(--ink-soft);font-size:1.06rem;margin-bottom:1.1em}
+#intro .intro-copy p:last-child{margin-bottom:0}
+
 /* trust strip */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream-2)}
 .trust .wrap{display:flex;flex-wrap:wrap;gap:1rem 3rem;justify-content:center;padding:18px 28px;
@@ -362,9 +368,9 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
   <div class="blob b2"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow reveal">Optimize Wellness &amp; Fertility</span>
-      <h1 class="reveal" data-delay="1">A calmer, more hopeful path to <em>parenthood</em></h1>
-      <p class="lede reveal" data-delay="2">Empowering health strategies for fertility success, through guided hypnosis, coaching, and relaxation that nurture the mind-body connection.</p>
+      <span class="eyebrow reveal">The Fertility Collective</span>
+      <h1 class="reveal" data-delay="1">Supporting your journey through <em>fertility</em> and beyond</h1>
+      <p class="lede reveal" data-delay="2">Compassionate support for individuals and couples navigating fertility, pregnancy, birth, and the journey beyond.</p>
       <div class="hero-cta reveal" data-delay="3">
         <a class="btn btn-primary" href="#contact">Get in Touch</a>
         <a class="btn btn-ghost" href="#offerings">Explore Offerings</a>
@@ -373,6 +379,18 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     <div class="hero-figure reveal" data-delay="2">
       <!-- LOGO / BRAND IMAGE — save the file as images/logo.png -->
       <img class="hero-logo" src="images/logo.png" alt="The Fertility Collective" />
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section id="intro">
+  <div class="wrap">
+    <div class="intro-copy reveal">
+      <p>Whether you're trying to conceive naturally, preparing for IUI or IVF, expecting your baby, or looking for personalized guidance through pregnancy and birth, The Fertility Collective provides a welcoming space where you can feel informed, supported, and empowered.</p>
+      <p>Our approach combines education, guided hypnosis, relaxation techniques, and personalized coaching to help strengthen the mind-body connection and build confidence through every stage of your journey.</p>
+      <p>Today, our offerings focus on fertility, pregnancy, and birth, with plans to thoughtfully expand into postpartum, parenting, menopause, and wellness—continuing our commitment to supporting you through every season of life.</p>
+      <p>No matter where you are on your path, we're here to walk beside you with compassion, knowledge, and unwavering support.</p>
     </div>
   </div>
 </section>
@@ -415,9 +433,9 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     <div class="cards">
       <!-- Card 1: fertility group series -->
       <div class="card reveal">
-        <h3>Fertility &amp; Wellness Relaxation Series</h3>
+        <h3>Fertility Relaxation Series</h3>
         <div class="price-row"><span class="price-pill">$325 <small>/ 3 session small-group</small></span></div>
-        <p class="price-note">Covers all 3 weekly sessions, not per session. Payment by Venmo only.</p>
+        <p class="price-note">Covers all 3 weekly sessions, not per session.</p>
         <div class="card-meta">3 sessions · 1 hr each · Small group</div>
         <p class="card-desc">Three guided relaxation sessions using self-hypnosis and visualization tailored to fertility. Learn practical tools to reduce stress, quiet limiting thoughts, and build a positive, hopeful mindset, while connecting with others on a similar path.</p>
         <div class="dates">
@@ -448,8 +466,8 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
       <div class="card reveal" data-delay="1">
         <h3>Fertility Coaching &amp; Guided Hypnosis</h3>
         <div class="price-row"><span class="price-pill">$575 <small>/ 3 session private</small></span></div>
-        <p class="price-note">Covers all 3 private sessions, not per session. Payment by Venmo only.</p>
-        <div class="card-meta">3 sessions · 1 hr 30 min each · Private 1:1</div>
+        <p class="price-note">Covers all 3 private sessions, not per session.</p>
+        <div class="card-meta">3 sessions · 1 hr 30 min each<br>Private 1:1</div>
         <p class="card-desc">Personalized one-on-one sessions to gain clarity, build confidence, and create a positive mindset. Combines tailored fertility coaching with guided hypnosis to quiet limiting thoughts, reduce stress, and strengthen the beliefs that support your goals.</p>
         <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Fertility Coach.</p>
         <div class="spacer"></div>
@@ -461,10 +479,10 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
         <h3>Pregnancy Relaxation Series</h3>
         <div class="price-row">
           <span class="price-pill">$325 <small>/ 3 session small-group</small></span>
-          <span class="price-pill">$475 <small>/ 3 session private</small></span>
+          <span class="price-pill">$575 <small>/ 3 session private</small></span>
         </div>
-        <p class="price-note">Each price covers all 3 weekly sessions, not per session. Payment by Venmo only.</p>
-        <div class="card-meta">3 sessions · 1 hr each · Small group or Private</div>
+        <p class="price-note">Each price covers all 3 weekly sessions, not per session.</p>
+        <div class="card-meta">3 sessions · 1 hr each · Small group or Private 1:1</div>
         <p class="card-desc">Gentle self-hypnosis and visualization to support you through pregnancy as you prepare for birth and motherhood. Reduce stress, build confidence, and cultivate a calm, positive mindset, alongside other expectant mothers, or one-on-one.</p>
         <div class="dates">
           <p class="dates-help">Small-group program runs as a <strong>3-week set</strong>, one class a week for three weeks. Choose the Thursday or Saturday small group, then pick whichever start set fits your schedule:</p>
@@ -498,15 +516,17 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 <section id="how">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">How Fertility Hypnosis Helps</span>
-      <h2>A gentle, supportive approach</h2>
+      <span class="eyebrow">Our Approach</span>
+      <h2>How Our Approach Helps</h2>
+      <p>Gentle, personalized support for every stage of your journey.</p>
     </div>
-    <p class="how-lead reveal">The journey to parenthood can be filled with hope, excitement, and at times emotional challenges. Through guided relaxation, visualization, and positive suggestion, this mind-body practice works alongside your natural fertility journey or medical treatments such as IVF.</p>
+    <p class="how-lead reveal">Whether you're navigating fertility, preparing for pregnancy and birth, or seeking support through life's next chapter, our approach combines guided hypnosis, relaxation, education, and personalized coaching to nurture the connection between mind and body.</p>
+    <p class="how-lead reveal">Every session is designed to complement your medical care, helping you feel calmer, more confident, and better equipped with practical tools to support your emotional and physical well-being.</p>
     <div class="how-grid">
-      <div class="how-item reveal"><div class="how-num">01</div><h3>Reduce Stress &amp; Restore Balance</h3><p>Chronic stress can affect hormone balance and overall well-being. These sessions help quiet the mind, lower stress, and encourage a sense of calm that supports reproductive health.</p></div>
-      <div class="how-item reveal" data-delay="1"><div class="how-num">02</div><h3>Support Conception &amp; Treatments</h3><p>Research suggests hypnosis used alongside fertility treatments, including IVF embryo transfer, may help improve outcomes, letting you approach treatment with greater confidence and ease.</p></div>
-      <div class="how-item reveal" data-delay="2"><div class="how-num">03</div><h3>Strengthen the Mind-Body Connection</h3><p>Many carry subconscious fears, disappointment, or self-doubt around fertility. Guided hypnosis helps gently release these blocks while fostering trust, hope, and resilience.</p></div>
-      <div class="how-item reveal" data-delay="3"><div class="how-num">04</div><h3>Encourage Optimal Physical Response</h3><p>Through targeted visualization and positive imagery, sessions help your body respond optimally to fertility hormones and create a welcoming environment for implantation.</p></div>
+      <div class="how-item reveal"><div class="how-num">01</div><h3>Reduce Stress &amp; Restore Balance</h3><p>Stress can affect both emotional and physical well-being. Guided relaxation and hypnosis help calm the nervous system, ease anxiety, and create space for greater balance, resilience, and healing.</p></div>
+      <div class="how-item reveal" data-delay="1"><div class="how-num">02</div><h3>Build Confidence &amp; Emotional Resilience</h3><p>Whether you're trying to conceive, preparing for IVF, expecting your baby, or approaching birth, personalized coaching and guided hypnosis can help quiet fear, strengthen confidence, and foster a more positive mindset.</p></div>
+      <div class="how-item reveal" data-delay="2"><div class="how-num">03</div><h3>Strengthen the Mind-Body Connection</h3><p>Visualization, relaxation, and positive suggestion help deepen awareness of the powerful connection between mind and body, encouraging trust in yourself and supporting your overall wellness throughout every stage of your journey.</p></div>
+      <div class="how-item reveal" data-delay="3"><div class="how-num">04</div><h3>Support Your Unique Journey</h3><p>No two journeys are alike. Every individual and couple receives compassionate, personalized support tailored to their goals—whether navigating fertility treatments, preparing for birth, or building lifelong tools for wellness and self-care.</p></div>
     </div>
   </div>
 </section>
@@ -519,12 +539,14 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
       <img src="images/jacqui.jpg" alt="Jacqui Pilla, founder of The Fertility Collective" />
     </div>
     <div class="about-body reveal" data-delay="1">
-      <span class="eyebrow">Meet Your Guide</span>
+      <span class="eyebrow">Meet the Heart Behind The Fertility Collective</span>
       <h2>Hi, I'm Jacqui Pilla</h2>
-      <p>A certified hypnotherapist, fertility coach, and childbirth educator here at The Fertility Collective. My passion for supporting women on their fertility journeys began years ago, when my husband and I navigated our own path to building our family.</p>
-      <p>After becoming a childbirth educator and doula, I continued my training in fertility-focused hypnosis and built a private practice dedicated to helping women find support, confidence, and calm. Today, I also work with families as a childbirth educator at <a href="https://www.storkready.com" target="_blank" rel="noopener" style="color:var(--sage-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px">Stork Ready</a>.</p>
-      <p>I created The Fertility Collective to offer women a nurturing space for education, guidance, and connection with others who understand what they're experiencing. Whether you're conceiving naturally or through assisted treatments, navigating primary or secondary infertility, my sessions are designed to help you feel empowered every step of the way.</p>
-      <p class="sig">It would be my privilege to walk alongside you.</p>
+      <p>I'm a certified hypnotherapist, fertility coach, childbirth educator, and the founder of The Fertility Collective—a community created to support individuals and couples through fertility, pregnancy, birth, and the journey beyond.</p>
+      <p>My passion for this work began many years ago when my husband and I navigated our own fertility journey while building our family. That experience inspired me to learn everything I could about fertility, pregnancy, birth, and the powerful connection between the mind and body. What began as a personal journey became a calling to help others feel supported, informed, and empowered during some of life's most meaningful transitions.</p>
+      <p>After becoming a childbirth educator and doula, I continued my training in fertility-focused hypnosis and developed a private practice dedicated to helping individuals and couples find greater calm, confidence, and resilience. Today, I also work with growing families as a childbirth educator at <a href="https://www.storkready.com" target="_blank" rel="noopener" style="color:var(--sage-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px">Stork Ready</a>.</p>
+      <p>I founded The Fertility Collective to be more than a place for guided hypnosis or coaching. I envisioned a welcoming community where people could find education, compassionate guidance, meaningful connection, and evidence-informed tools to nurture both emotional and physical well-being.</p>
+      <p>Whether you're trying to conceive naturally, navigating IUI or IVF, preparing for birth, or simply looking for someone to walk beside you during an important season of life, you'll be welcomed with understanding, encouragement, and personalized support.</p>
+      <p class="sig">It would be my privilege to walk alongside you as you navigate your own unique journey.</p>
     </div>
   </div>
 </section>
