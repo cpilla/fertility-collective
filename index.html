@@ -249,6 +249,16 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .date-grid{display:flex;flex-wrap:wrap;gap:.4em}
 .date-chip{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.32em .6em;font-size:.8rem;font-weight:600;color:var(--ink)}
 .card.feature .date-chip{background:rgb(255 255 255 /.12);border-color:rgb(255 255 255 /.2);color:#fff}
+.includes{margin:0 0 1.2em}
+.includes .ilabel{display:flex;align-items:center;gap:.5em;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:.7em}
+.includes .ilabel::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--clay);flex:none}
+.includes ul{list-style:none;margin:0;padding:0;display:grid;gap:.55em}
+.includes li{position:relative;padding-left:1.15em;font-size:.9rem;color:var(--ink-soft);line-height:1.5}
+.includes li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--blush)}
+.card.feature .includes .ilabel{color:#fff}
+.card.feature .includes li{color:rgb(250 245 236 /.82)}
+.card-outro{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.1em;line-height:1.55}
+.card.feature .card-outro{color:rgb(250 245 236 /.82)}
 .card-note{font-size:.78rem;font-style:italic;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:.9em;margin-bottom:1.1em}
 .card .spacer{flex:1}
 .card .btn{width:100%;justify-content:center}
@@ -452,7 +462,20 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
         <div class="price-row"><span class="price-pill">$475 <small>/ 3 session private</small></span></div>
         <p class="price-note">Covers all 3 private sessions, not per session.</p>
         <div class="card-meta">3 sessions · 1 hr 30 min each<br>Private 1:1</div>
-        <p class="card-desc">Personalized 1:1 sessions to gain clarity, build confidence, and create a positive mindset. Combines tailored fertility coaching with guided fertility hypnosis to quiet limiting thoughts, reduce stress, and strengthen the beliefs that support your goals. We will also work together to address any individual challenges such as nutrition and navigating the fertility process. This program includes a fertility journal and individualized support.</p>
+        <p class="card-desc">A personalized three-session program combining fertility coaching, guided hypnosis, and compassionate support throughout your fertility journey.</p>
+        <div class="includes">
+          <div class="ilabel">Your Private Fertility Sessions Includes</div>
+          <ul>
+            <li>Three 90-minute private sessions personalized to your individual needs and fertility journey</li>
+            <li>Customized guided fertility hypnosis to support relaxation, reduce stress, calm the nervous system, and encourage a more positive mindset</li>
+            <li>A guided fertility journal to track your daily relaxation and self-hypnosis practice, reflections, intentions, affirmations, and questions</li>
+            <li>Nutrition guidance and fertility-supportive recipes to help you make nourishing and manageable choices</li>
+            <li>Suggested questions for your doctors to help you feel more prepared, informed, and confident during appointments</li>
+            <li>Information about complementary therapies, including acupuncture, massage, movement, meditation, and other mind-body approaches</li>
+            <li>Individualized fertility coaching and support to help you prepare for appointments or procedures, manage uncertainty, and address your personal concerns</li>
+          </ul>
+        </div>
+        <p class="card-outro">You will leave the program with supportive strategies, personalized resources, and a daily relaxation practice that you can continue throughout your fertility journey.</p>
         <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Fertility Coach.</p>
         <div class="spacer"></div>
         <a class="btn btn-ghost" href="#contact">Call, Text, or Email to Inquire</a>
@@ -495,7 +518,20 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
         <div class="price-row"><span class="price-pill">$475 <small>/ 3 session private</small></span></div>
         <p class="price-note">Covers all 3 private sessions, not per session.</p>
         <div class="card-meta">3 sessions · 1 hr 30 min each<br>Private 1:1</div>
-        <p class="card-desc">Personalized 1:1 sessions to gain clarity, build confidence, and create a positive mindset. Combines tailored pregnancy and birth related coaching with guided pregnancy and birth hypnosis to quiet limiting thoughts, reduce stress, and strengthen the beliefs that support your goals. We will also work together to address any individual challenges such as nutrition and navigating the birth process. This program includes a pregnancy journal, birth preferences guidance, and individualized support.</p>
+        <p class="card-desc">A personalized three-session program combining guided hypnosis, relaxation, education, and compassionate support to help you feel calm, confident, and prepared throughout pregnancy and birth.</p>
+        <div class="includes">
+          <div class="ilabel">Your Private Pregnancy &amp; Birth Program Includes</div>
+          <ul>
+            <li>Three 90-minute private sessions personalized to your pregnancy, individual needs, and birth preferences</li>
+            <li>Customized guided pregnancy and birth hypnosis to encourage relaxation, reduce fear and anxiety, and build confidence in yourself and your body</li>
+            <li>A guided pregnancy journal to track your relaxation and self-hypnosis practice while creating space for reflection, connection, affirmations, and meaningful moments throughout your pregnancy</li>
+            <li>Guidance in exploring your birth preferences so you can better understand your options and communicate what matters most to you with your healthcare team</li>
+            <li>Relaxation and comfort techniques for labor, including breathing, visualization, self-hypnosis, and other supportive practices</li>
+            <li>Preparation for different birth experiences to help you feel informed, flexible, and supported, even when circumstances change</li>
+            <li>Individualized pregnancy and birth support to address your questions, concerns, fears, and personal goals in a private and compassionate setting</li>
+          </ul>
+        </div>
+        <p class="card-outro">You will leave the program with supportive strategies, personalized resources, and relaxation practices that you can continue using throughout pregnancy, labor, birth and beyond.</p>
         <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Childbirth Educator.</p>
         <div class="spacer"></div>
         <a class="btn btn-ghost" href="#contact">Call, Text, or Email to Inquire</a>
