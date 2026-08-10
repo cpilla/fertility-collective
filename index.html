@@ -314,8 +314,17 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .form-msg.ok{color:var(--sage-deep)}
 .form-msg.err{color:#B5703F}
 
+.pay-disclaimer{margin-top:1.4em;padding-top:1.1em;border-top:1px solid var(--line);
+  font-size:.8rem;line-height:1.55;color:var(--ink-soft)}
+.pay-disclaimer strong{color:var(--ink);font-weight:700}
+
 /* ---------- footer ---------- */
 footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
+.foot-legal{border-top:1px solid rgb(61 58 49 /.18);padding-top:26px;margin-bottom:30px}
+.foot-legal h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgb(61 58 49 /.6);margin-bottom:.9em}
+.foot-legal p{font-size:.82rem;line-height:1.6;opacity:.85;max-width:100ch;margin-bottom:.9em}
+.foot-legal p:last-child{margin-bottom:0;font-style:italic}
 .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:36px}
 .foot-brand{font-family:var(--serif);font-size:1.4rem;color:var(--ink);margin-bottom:.4em}
 .foot-grid p{font-size:.92rem;max-width:34ch}
@@ -619,6 +628,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
           <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
           <div><h4>Payment</h4><a href="https://venmo.com/u/Jacqui-Pilla" target="_blank" rel="noopener">Venmo only · @Jacqui-Pilla</a></div>
         </div>
+        <p class="pay-disclaimer"><strong>Disclaimer:</strong> Services provided by The Fertility Collective, including coaching, hypnosis, relaxation practices, and educational resources, are intended for supportive and educational purposes only and are not a substitute for medical advice, diagnosis, or treatment. Please consult your physician or other qualified healthcare provider regarding any medical concerns, fertility treatment, pregnancy, or birth-related care. Individual results may vary, and no specific outcome can be guaranteed.</p>
       </div>
 
       <form class="form reveal" data-delay="1" id="contactForm" novalidate>
@@ -671,6 +681,15 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
         <a href="mailto:fertilitycollectiveinfo@gmail.com">Email Us</a>
         <a href="#contact">Contact Us</a>
       </div>
+    </div>
+    <div class="foot-legal">
+      <h4>Disclaimer</h4>
+      <p>The information, education, coaching, hypnosis, relaxation practices, and resources provided by The Fertility Collective are intended for educational and supportive purposes only. They are not intended to diagnose, treat, cure, or prevent any medical or mental health condition and are not a substitute for medical advice, diagnosis, or treatment from a qualified healthcare professional.</p>
+      <p>The Fertility Collective does not provide medical care, psychotherapy, or other licensed healthcare services. Participation in coaching, hypnosis, relaxation sessions, classes, or other services does not create a physician-patient, therapist-patient, or other healthcare provider relationship.</p>
+      <p>Always consult with your physician, reproductive endocrinologist, midwife, mental health professional, or other qualified healthcare provider regarding questions or concerns about fertility, fertility treatments, pregnancy, birth, postpartum health, medications, or any medical condition.</p>
+      <p>Hypnosis, relaxation, visualization, coaching, and other mind-body practices are intended to complement&mdash;not replace&mdash;appropriate medical care. Individual experiences and results vary, and no specific fertility, pregnancy, birth, or health outcome can be guaranteed.</p>
+      <p>By using this website or participating in services offered by The Fertility Collective, you acknowledge that you are responsible for your own healthcare decisions and agree to seek appropriate medical care when needed.</p>
+      <p>The Fertility Collective supports your journey alongside your medical care&mdash;not in place of it.</p>
     </div>
     <div class="foot-bottom">
       <span>© <span id="yr"></span> The Fertility Collective. All Rights Reserved.</span>
