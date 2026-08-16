@@ -186,7 +186,7 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
   display:flex;align-items:center;gap:28px;
   background:linear-gradient(150deg,var(--sage),#DCE6CE);
   color:var(--ink);border-radius:22px;padding:28px 34px;margin-bottom:24px;
-  position:relative;overflow:hidden;
+  position:relative;overflow:hidden;scroll-margin-top:104px;
 }
 .consult-banner::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
   border-radius:50%;background:radial-gradient(circle,rgb(255 255 255 /.08),transparent 70%);pointer-events:none}
@@ -203,6 +203,8 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
   color:rgb(61 58 49 /.7)}
 .consult-banner h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.15;margin-bottom:.25em}
 .consult-banner p{color:rgb(61 58 49 /.8);font-size:.98rem;max-width:60ch;margin:0}
+.consult-banner .cb-dates{display:flex;flex-wrap:wrap;gap:.4em;margin-top:.9em}
+.consult-banner .cb-dates .date-chip{background:rgb(255 255 255 /.65);border-color:rgb(255 255 255 /.7)}
 .consult-banner .btn{flex:none;white-space:nowrap}
 @media(max-width:760px){
   .consult-banner{flex-direction:column;align-items:flex-start;gap:18px;padding:26px 24px}
@@ -372,6 +374,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#offerings">Offerings</a>
+      <a href="#support">Support Group</a>
       <a href="#how">How It Helps</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -435,6 +438,28 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
       <p>Small group and private sessions designed to help you feel informed, empowered, and supported, whether you're trying to conceive naturally, pursuing IUI or IVF, or preparing for birth.</p>
     </div>
 
+    <!-- Free monthly support group — full-width banner above the program grid -->
+    <div class="consult-banner reveal" id="support">
+      <div class="cb-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="cb-main">
+        <div class="cb-tags">
+          <span class="cb-badge">Free to attend</span>
+          <span class="cb-meta">Second Wednesday monthly · 7:15 to 8:15pm</span>
+        </div>
+        <h3>Free Fertility Support Group</h3>
+        <p>Join us in person on the second Wednesday of each month at 7:15 PM for one hour at The Fertility Collective in North Reading. This is a warm, welcoming space to connect, share, and feel supported throughout your fertility journey. Open to individuals and couples navigating fertility at any stage of their journey.</p>
+        <div class="cb-dates">
+          <span class="date-chip">Sep 9</span>
+          <span class="date-chip">Oct 14</span>
+          <span class="date-chip">Nov 11</span>
+          <span class="date-chip">Dec 9</span>
+        </div>
+      </div>
+      <a class="btn btn-clay" href="https://forms.gle/9m8e8H228XwctgQG7" target="_blank" rel="noopener">Register Free</a>
+    </div>
+
     <div class="cards">
       <!-- Card 1: fertility group series -->
       <div class="card reveal">
@@ -470,13 +495,13 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 
       <!-- Card 2: private coaching -->
       <div class="card reveal" data-delay="1">
-        <h3>Fertility Coaching Private Sessions</h3>
+        <h3>Fertility Coaching Private Series</h3>
         <div class="price-row"><span class="price-pill">$475 <small>/ 3 session private</small></span></div>
         <p class="price-note">Covers all 3 private sessions, not per session.</p>
         <div class="card-meta">3 sessions · 1 hr 30 min each<br>Private 1:1</div>
         <p class="card-desc">A personalized three-session program combining fertility coaching, guided hypnosis, and compassionate support throughout your fertility journey.</p>
         <div class="includes">
-          <div class="ilabel">Your Private Fertility Sessions Includes</div>
+          <div class="ilabel">Your Private Fertility Series Includes</div>
           <ul>
             <li>Three 90-minute private sessions personalized to your individual needs and fertility journey</li>
             <li>Customized guided fertility hypnosis to support relaxation, reduce stress, calm the nervous system, and encourage a more positive mindset</li>
@@ -496,7 +521,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 
       <!-- Card 3: pregnancy group series -->
       <div class="card reveal" data-delay="2">
-        <h3>Pregnancy &amp; Birth Relaxation Sessions</h3>
+        <h3>Pregnancy &amp; Birth Relaxation Series</h3>
         <div class="price-row"><span class="price-pill">$325 <small>/ 3 sessions · small group</small></span></div>
         <p class="price-note">Covers all 3 weekly sessions, not per session.</p>
         <div class="card-meta">3 sessions · 1 hr each · Small group</div>
@@ -528,7 +553,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 
       <!-- Card 4: pregnancy private coaching -->
       <div class="card reveal" data-delay="3">
-        <h3>Pregnancy &amp; Birth Private Sessions</h3>
+        <h3>Pregnancy &amp; Birth Private Series</h3>
         <div class="price-row"><span class="price-pill">$475 <small>/ 3 session private</small></span></div>
         <p class="price-note">Covers all 3 private sessions, not per session.</p>
         <div class="card-meta">3 sessions · 1 hr 30 min each<br>Private 1:1</div>
@@ -678,6 +703,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
       <div class="foot-col">
         <h4>Explore</h4>
         <a href="#offerings">Offerings</a>
+        <a href="#support">Free Support Group</a>
         <a href="#how">How It Helps</a>
         <a href="#about">About Jacqui</a>
         <a href="#contact">Contact</a>
