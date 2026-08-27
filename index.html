@@ -210,6 +210,15 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
   .consult-banner{flex-direction:column;align-items:flex-start;gap:18px;padding:26px 24px}
   .consult-banner .btn{width:100%;justify-content:center}
 }
+/* partner referral — same shape as the consult banner, warmer palette */
+.consult-banner.partner{background:linear-gradient(150deg,var(--blush),#F7EDE1);margin:28px 0 0}
+.consult-banner.partner .cb-badge{background:var(--clay-deep);color:var(--ink)}
+.consult-banner .cb-fine{font-size:.78rem;color:rgb(61 58 49 /.6);margin-top:.9em}
+.consult-banner .cb-list{list-style:none;margin:.9em 0 0;padding:0;display:grid;gap:.35em;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));max-width:64ch}
+.consult-banner .cb-list li{position:relative;padding-left:1.15em;font-size:.9rem;color:rgb(61 58 49 /.8);line-height:1.5}
+.consult-banner .cb-list li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;
+  border-radius:50%;background:var(--clay-deep)}
 @media(max-width:920px){
   .cards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
 }
@@ -335,6 +344,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 .foot-col h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(61 58 49 /.6);margin-bottom:.7em}
 .foot-col a{display:block;font-size:.95rem;margin-bottom:.4em;color:var(--ink);opacity:.85}
 .foot-col a:hover{opacity:1}
+.foot-col .foot-note{display:block;font-size:.78rem;opacity:.65;margin:-.15em 0 .6em;max-width:24ch;line-height:1.4}
 .foot-bottom{border-top:1px solid rgb(61 58 49 /.18);padding-top:20px;font-size:.82rem;opacity:.7;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
 
 /* ---------- reveal animation ---------- */
@@ -574,6 +584,27 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
         <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
       </div>
     </div>
+
+    <!-- Partner referral — CircleBloom guided fertility courses -->
+    <div class="consult-banner partner reveal">
+      <div class="cb-main">
+        <div class="cb-tags">
+          <span class="cb-badge">20% off · code TFC20</span>
+          <span class="cb-meta">Online, at your own pace</span>
+        </div>
+        <h3>CircleBloom Membership</h3>
+        <p>Support between sessions, whenever you need it. Members of The Fertility Collective community get 20% off with code TFC20.</p>
+        <ul class="cb-list">
+          <li>Unlimited access to all 20+ guided programs</li>
+          <li>Fertility, pregnancy &amp; wellness meditations</li>
+          <li>Offline listening support</li>
+          <li>New content added regularly</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <p class="cb-fine">Referral link. The Fertility Collective may receive a small credit when you use it.</p>
+      </div>
+      <a class="btn btn-clay" href="https://circlebloom.com/r/TFC20" target="_blank" rel="noopener">Get 20% Off</a>
+    </div>
   </div>
 </section>
 
@@ -710,6 +741,11 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
         <a href="tel:+19788861869">978.886.1869</a>
         <a href="mailto:fertilitycollectiveinfo@gmail.com">Email Us</a>
         <a href="#contact">Contact Us</a>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <a href="https://circlebloom.com/r/TFC20" target="_blank" rel="noopener">CircleBloom</a>
+        <span class="foot-note">20+ guided fertility &amp; pregnancy programs. 20% off with code TFC20 (referral link).</span>
       </div>
     </div>
     <div class="foot-legal">
