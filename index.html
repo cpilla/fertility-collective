@@ -248,7 +248,9 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .consult-banner .cb-dates .date-chip{background:rgb(255 255 255 /.65);border-color:rgb(255 255 255 /.7)}
 .consult-banner .btn{flex:none;white-space:nowrap}
 @media(max-width:760px){
-  .consult-banner{flex-direction:column;align-items:flex-start;gap:18px;padding:26px 24px}
+  .consult-banner{flex-direction:column;align-items:stretch;gap:18px;padding:26px 24px}
+  .consult-banner .cb-main{width:100%;min-width:0}
+  .consult-banner .cb-list{grid-template-columns:1fr}
   .consult-banner .btn{width:100%;justify-content:center}
 }
 /* partner referral — same shape as the consult banner, warmer palette */
@@ -256,7 +258,7 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .consult-banner.partner .cb-badge{background:var(--clay-deep);color:var(--ink)}
 .consult-banner .cb-fine{font-size:.78rem;color:rgb(61 58 49 /.6);margin-top:.9em}
 .consult-banner .cb-list{list-style:none;margin:.9em 0 0;padding:0;display:grid;gap:.35em;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));max-width:64ch}
+  grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));max-width:64ch}
 .consult-banner .cb-list li{position:relative;padding-left:1.15em;font-size:.9rem;color:rgb(61 58 49 /.8);line-height:1.5}
 .consult-banner .cb-list li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;
   border-radius:50%;background:var(--clay-deep)}
@@ -346,11 +348,12 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 
 /* ---------- contact ---------- */
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(34px,6vw,64px);align-items:start}
-.contact-info .ci{display:flex;gap:.9em;align-items:flex-start;margin-bottom:1.5em}
+.contact-info .ci{display:flex;gap:.9em;align-items:flex-start;margin-bottom:1.5em;min-width:0}
+.contact-info .ci>div{min-width:0}
 .contact-info .ci .ico{width:42px;height:42px;border-radius:12px;background:var(--cream-2);display:grid;place-items:center;flex:none;color:var(--sage-deep)}
 .contact-info .ci .ico svg{width:20px;height:20px}
 .contact-info .ci h4{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.2em}
-.contact-info .ci a,.contact-info .ci p{font-size:1.05rem;color:var(--ink);font-weight:500}
+.contact-info .ci a,.contact-info .ci p{font-size:1.05rem;color:var(--ink);font-weight:500;overflow-wrap:anywhere}
 .contact-info .ci a:hover{color:var(--sage-deep)}
 .form{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,36px)}
 .form .field{margin-bottom:1.1em}
