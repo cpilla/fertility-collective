@@ -170,15 +170,11 @@ header{
 }
 header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--shadow)/.6)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:86px}
-.brand{display:flex;align-items:center;gap:.55em;font-family:var(--serif);font-weight:500;font-size:.92rem;letter-spacing:-.01em}
-.brand .brand-logo{
-  height:62px;width:auto;flex:none;
-  filter:drop-shadow(0 6px 12px rgb(var(--shadow)/.18));
-}
-.brand .brand-name{color:var(--ink-soft);max-width:8.5em;line-height:1.15}
+.brand{display:flex;align-items:center;flex:none}
+/* wordmark logo (images/logo.png, ~1.9:1). Sized by height so it sits inside the 86px bar. */
+.brand .brand-logo{height:66px;width:auto;flex:none}
 @media(max-width:480px){
-  .brand .brand-logo{height:52px}
-  .brand .brand-name{font-size:.82rem}
+  .brand .brand-logo{height:50px}
 }
 .nav-links{display:flex;align-items:center;gap:2rem}
 .nav-links a{font-size:.92rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
@@ -198,8 +194,8 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--s
 .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem}
 .hero-figure{position:relative;display:flex;justify-content:center}
 .hero-figure .hero-logo{
-  width:100%;height:auto;max-width:440px;
-  filter:drop-shadow(0 26px 44px rgb(var(--shadow)/.18));
+  width:100%;height:auto;max-width:520px;
+  filter:drop-shadow(0 18px 30px rgb(var(--shadow)/.10));
 }
 
 /* ---------- intro ---------- */
@@ -502,7 +498,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
   .hero-grid{grid-template-columns:1fr;text-align:center}
   .hero .lede{margin-left:auto;margin-right:auto}
   .hero-cta{justify-content:center}
-  .hero-figure{max-width:380px;margin:0 auto;order:-1}
+  .hero-figure{max-width:420px;margin:0 auto;order:-1}
   .about-grid{grid-template-columns:1fr}
   .about-photo{max-width:380px}
   .contact-grid{grid-template-columns:1fr}
@@ -519,8 +515,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 <header id="top">
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <img class="brand-logo" src="images/logo.png" alt="The Fertility Collective" />
-      <span class="brand-name">The Fertility Collective</span>
+      <img class="brand-logo" src="images/logo.png?v=2" alt="The Fertility Collective" />
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#offerings">Offerings</a>
@@ -552,7 +547,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     </div>
     <div class="hero-figure reveal" data-delay="2">
       <!-- LOGO / BRAND IMAGE — save the file as images/logo.png -->
-      <img class="hero-logo" src="images/logo.png" alt="The Fertility Collective" />
+      <img class="hero-logo" src="images/logo.png?v=2" alt="The Fertility Collective" />
     </div>
   </div>
 </section>
