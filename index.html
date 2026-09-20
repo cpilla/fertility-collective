@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light only" />
-<title>The Fertility Collective | Fertility & Pregnancy Hypnosis, North Reading MA</title>
-<meta name="description" content="The Fertility Collective offers fertility and pregnancy hypnosis, coaching, and guided relaxation with certified hypnotherapist Jacqui Pilla in North Reading, MA. Empowering health strategies for fertility success." />
+<title>The Fertility Collective | Fertility, Pregnancy, Postpartum & Wellness Hypnosis, North Reading MA</title>
+<meta name="description" content="The Fertility Collective offers guided hypnosis, coaching, and relaxation for fertility, pregnancy and birth, postpartum, and women's wellness with certified hypnotherapist Jacqui Pilla in North Reading, MA." />
 <meta name="author" content="The Fertility Collective" />
 
 <link rel="canonical" href="https://thefertilitycollective.net/" />
@@ -42,7 +42,7 @@
   "url": "https://thefertilitycollective.net/",
   "logo": "https://thefertilitycollective.net/images/favicon-192.png",
   "image": "https://thefertilitycollective.net/images/og-image.png",
-  "description": "Fertility and pregnancy hypnosis, coaching, and guided relaxation with certified hypnotherapist Jacqui Pilla in North Reading, MA.",
+  "description": "Guided hypnosis, coaching, and relaxation for fertility, pregnancy and birth, postpartum, and women's wellness with certified hypnotherapist Jacqui Pilla in North Reading, MA.",
   "telephone": "+1-978-886-1869",
   "email": "fertilitycollectiveinfo@gmail.com",
   "address": {
@@ -78,13 +78,17 @@
   //      https://docs.google.com/spreadsheets/d/<SHEET_ID>/gviz/tq?tqx=out:csv&gid=<TAB_GID>
   //    Leave "" and the page just uses the dates already written into the HTML below.
   //
-  //    The sheet now has FOUR columns — one per group (column order doesn't
-  //    matter; the code matches on the header text, so keep these words in them):
+  //    One column per series. Column order doesn't matter — the code matches on
+  //    the header text: a program word plus (optionally) a day of the week, e.g.
   //      "Fertility - Wednesday"   "Fertility - Saturday"
   //      "Pregnancy - Thursday"    "Pregnancy - Saturday"
-  //    Each row is one 3-week session set. In a cell, just type the three dates
-  //    separated by commas, e.g.   Sep 9, 16, 23   — the page renders that as
-  //    chips ("Sep 9 · 16 · 23"). No special symbols needed.
+  //      "Postpartum - Tuesday"    "Wellness - Thursday"
+  //      "Menopause - Saturday"    "Support Group"
+  //    Program words the code understands: Fertility, Pregnancy (or Birth),
+  //    Postpartum, Wellness, Menopause, Support (the free support group).
+  //    Each row is one session set. In a cell, just type the dates separated by
+  //    commas, e.g.   Sep 9, 16, 23   — the page renders that as a chip
+  //    ("Sep 9 · 16 · 23"). No special symbols needed.
   //    (See "How to update class dates.md" for the simple step-by-step.)
   window.SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1eFqQ0Zpfd2dnN6FtQrDFUSuJkigbZDGKZz0-0LScudc/gviz/tq?tqx=out:csv&gid=1646507321";
 </script>
@@ -212,7 +216,7 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgb(var(--s
 .trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--clay)}
 
 /* ---------- section scaffolding ---------- */
-section{padding:clamp(64px,9vw,118px) 0;position:relative}
+section{padding:clamp(64px,9vw,118px) 0;position:relative;scroll-margin-top:86px}
 .sec-head{max-width:680px;margin-bottom:clamp(36px,5vw,58px)}
 .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
 .sec-head h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:500;margin:.3em 0 .4em}
@@ -221,6 +225,44 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 /* ---------- offerings ---------- */
 #offerings{background:var(--paper)}
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch}
+
+/* ---------- offerings: stage tabs ---------- */
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:clamp(34px,4.5vw,50px)}
+.tab{
+  display:flex;flex-direction:column;align-items:flex-start;text-align:left;
+  font-family:var(--sans);cursor:pointer;background:var(--cream);border:1.5px solid var(--line);
+  border-radius:18px;padding:18px 20px 16px;color:var(--ink);appearance:none;-webkit-appearance:none;
+  transition:border-color .25s ease, background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.tab:hover{border-color:var(--sage);transform:translateY(-2px)}
+.tab:focus-visible{outline:3px solid rgb(76 123 79 /.35);outline-offset:2px}
+.tab .tab-ico{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--cream-2);color:var(--sage-deep);margin-bottom:.75em;transition:background .25s ease}
+.tab .tab-ico svg{width:19px;height:19px}
+.tab .tab-title{font-family:var(--serif);font-size:1.12rem;font-weight:500;line-height:1.2;margin-bottom:.2em}
+.tab .tab-sub{font-size:.78rem;color:var(--ink-soft);line-height:1.4}
+.tab[aria-selected="true"]{background:var(--sage);border-color:var(--sage);box-shadow:0 18px 34px -24px rgb(var(--shadow)/.6)}
+.tab[aria-selected="true"] .tab-ico{background:rgb(255 255 255 /.6)}
+.tab[aria-selected="true"] .tab-sub{color:rgb(61 58 49 /.75)}
+@media(max-width:760px){
+  .tabs{grid-template-columns:1fr 1fr;gap:10px}
+  .tab{padding:14px 14px 12px;border-radius:14px}
+  .tab .tab-title{font-size:1rem}
+  .tab .tab-ico{width:30px;height:30px;margin-bottom:.55em}
+}
+@media(max-width:400px){.tab .tab-sub{display:none}}
+
+.panel{display:none;animation:panelIn .45s ease}
+.panel.active{display:block}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.panel-head{max-width:740px;margin-bottom:clamp(28px,4vw,40px)}
+.panel-head h3{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:500;margin:.25em 0 .5em}
+.panel-head p{color:var(--ink-soft);font-size:1.02rem;margin-bottom:.9em}
+.panel-head p:last-child{margin-bottom:0}
+
+.sub-head{display:flex;align-items:baseline;gap:.5em 1.2em;flex-wrap:wrap;margin:clamp(34px,5vw,52px) 0 20px}
+.sub-head h3{font-size:1.4rem;font-weight:500}
+.sub-head p{color:var(--ink-soft);font-size:.95rem}
 
 /* free consultation — full-width "start here" banner above the program grid */
 .consult-banner{
@@ -242,8 +284,9 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
   letter-spacing:.12em;text-transform:uppercase;padding:.4em .85em;border-radius:999px}
 .consult-banner .cb-meta{font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
   color:rgb(61 58 49 /.7)}
-.consult-banner h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.15;margin-bottom:.25em}
-.consult-banner p{color:rgb(61 58 49 /.8);font-size:.98rem;max-width:60ch;margin:0}
+.consult-banner h3,.consult-banner h4{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.15;margin-bottom:.25em}
+.consult-banner p{color:rgb(61 58 49 /.8);font-size:.98rem;max-width:64ch;margin:0}
+.consult-banner p + p{margin-top:.6em}
 .consult-banner .cb-dates{display:flex;flex-wrap:wrap;gap:.4em;margin-top:.9em}
 .consult-banner .cb-dates .date-chip{background:rgb(255 255 255 /.65);border-color:rgb(255 255 255 /.7)}
 .consult-banner .btn{flex:none;white-space:nowrap}
@@ -256,12 +299,18 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 /* partner referral — same shape as the consult banner, warmer palette */
 .consult-banner.partner{background:linear-gradient(150deg,var(--blush),#F7EDE1);margin:28px 0 0}
 .consult-banner.partner .cb-badge{background:var(--clay-deep);color:var(--ink)}
+/* "with your partner" add-on — same shape, quiet white surface so it reads as an option, not a promo */
+.consult-banner.duo{background:var(--paper);border:1px solid var(--line);margin:24px 0 0}
+.consult-banner.duo::after{display:none}
+.consult-banner.duo .cb-badge{background:var(--clay);color:var(--ink)}
+.consult-banner.duo .cb-list li::before{background:var(--sage)}
 .consult-banner .cb-fine{font-size:.78rem;color:rgb(61 58 49 /.6);margin-top:.9em}
 .consult-banner .cb-list{list-style:none;margin:.9em 0 0;padding:0;display:grid;gap:.35em;
   grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));max-width:64ch}
 .consult-banner .cb-list li{position:relative;padding-left:1.15em;font-size:.9rem;color:rgb(61 58 49 /.8);line-height:1.5}
 .consult-banner .cb-list li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;
   border-radius:50%;background:var(--clay-deep)}
+.consult-banner .cb-list li strong{color:var(--ink);font-weight:700}
 @media(max-width:920px){
   .cards{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
 }
@@ -280,7 +329,9 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
   font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.45em .9em;border-radius:999px;box-shadow:0 8px 18px -8px rgb(var(--shadow)/.7);
 }
-.card h3{font-size:1.34rem;font-weight:500;line-height:1.2;margin-bottom:.5em;min-height:0}
+.card h3,.card h4{font-size:1.34rem;font-weight:500;line-height:1.2;margin-bottom:.5em;min-height:0}
+.card .card-kicker{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.7em}
+.card .card-tag{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--sage-deep);margin:-.2em 0 .8em;line-height:1.4}
 .price-row{display:flex;flex-wrap:wrap;gap:.45em;margin-bottom:.5em}
 .price-pill{
   display:inline-flex;align-items:baseline;gap:.3em;background:var(--cream-2);
@@ -302,6 +353,7 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .card.feature .dates .dlabel{color:#fff}
 .date-grid{display:flex;flex-wrap:wrap;gap:.4em}
 .date-chip{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.32em .6em;font-size:.8rem;font-weight:600;color:var(--ink)}
+.date-chip.tba{background:transparent;border-style:dashed;border-color:var(--clay-deep);color:var(--ink-soft);font-weight:500}
 .card.feature .date-chip{background:rgb(255 255 255 /.12);border-color:rgb(255 255 255 /.2);color:#fff}
 .includes{margin:0 0 1.2em}
 .includes .ilabel{display:flex;align-items:center;gap:.5em;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:.7em}
@@ -309,8 +361,24 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .includes ul{list-style:none;margin:0;padding:0;display:grid;gap:.55em}
 .includes li{position:relative;padding-left:1.15em;font-size:.9rem;color:var(--ink-soft);line-height:1.5}
 .includes li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--blush)}
+.includes li strong{color:var(--ink);font-weight:700}
+.includes.two-col ul{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:.45em 1.2em}
 .card.feature .includes .ilabel{color:#fff}
 .card.feature .includes li{color:rgb(250 245 236 /.82)}
+
+/* session-by-session breakdown — collapsed by default inside product cards, open on the focus cards */
+.sessions{margin:0 0 1.2em}
+.sessions summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.5em;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--sage-deep);padding:.15em 0}
+.sessions summary::-webkit-details-marker{display:none}
+.sessions summary::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--clay);flex:none}
+.sessions summary::after{content:"";margin-left:auto;margin-right:.3em;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);transition:transform .25s ease;flex:none}
+.sessions[open] summary::after{transform:rotate(-135deg) translate(-2px,-2px)}
+.sessions summary:hover{color:#3C6440}
+.sessions ol{list-style:none;margin:.95em 0 0;padding:0;display:grid;gap:.9em}
+.sessions li{display:grid;grid-template-columns:auto 1fr;gap:.9em;font-size:.9rem;color:var(--ink-soft);line-height:1.55}
+.sessions .s-num{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--clay-deep);line-height:1;padding-top:.12em;min-width:1.4em}
+.sessions .s-title{display:block;font-weight:700;color:var(--ink);margin-bottom:.15em}
+
 .card-outro{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.1em;line-height:1.55}
 .card.feature .card-outro{color:rgb(250 245 236 /.82)}
 .card-alert{display:flex;align-items:flex-start;gap:.55em;background:var(--cream-2);border:1px solid var(--clay-deep);
@@ -322,6 +390,30 @@ section{padding:clamp(64px,9vw,118px) 0;position:relative}
 .card .btn{width:100%;justify-content:center}
 .card-alt-contact{margin-top:.7em;text-align:center;font-size:.85rem;color:var(--ink-soft)}
 .card-alt-contact a{color:var(--sage-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+
+/* full-width card with two inner columns (women's wellness private program) */
+.card.wide{display:block;margin-bottom:24px}
+.card.wide .wide-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 44px;align-items:start}
+.card.wide .wide-grid .btn{width:auto}
+@media(max-width:920px){.card.wide{max-width:520px;margin-left:auto;margin-right:auto}.card.wide .wide-grid{grid-template-columns:1fr;gap:0}.card.wide .wide-grid .btn{width:100%}}
+
+/* supporting prose blocks (why three sessions / your journey is welcome here) */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;align-items:start}
+.info{background:var(--cream-2);border-radius:22px;padding:28px 30px}
+.info h4{font-size:1.28rem;font-weight:500;margin-bottom:.55em}
+.info p{font-size:.95rem;color:var(--ink-soft);margin-bottom:.8em;line-height:1.65}
+.info p:last-child{margin-bottom:0}
+@media(max-width:760px){.info-grid{grid-template-columns:1fr}}
+
+/* per-tab "find the right fit" row + disclaimer */
+.panel-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;
+  margin-top:28px;padding:24px 28px;border:1px solid var(--line);border-radius:18px;background:var(--cream)}
+.panel-cta .pc-text{flex:1 1 320px;min-width:0}
+.panel-cta h4{font-size:1.25rem;font-weight:500;margin-bottom:.3em}
+.panel-cta p{font-size:.92rem;color:var(--ink-soft);max-width:60ch}
+.panel-cta .pc-actions{display:flex;flex-wrap:wrap;gap:.7rem}
+@media(max-width:560px){.panel-cta .pc-actions{width:100%}.panel-cta .pc-actions .btn{flex:1;justify-content:center}}
+.panel-fine{font-size:.8rem;color:var(--ink-soft);margin-top:22px;line-height:1.55;max-width:88ch}
 
 /* ---------- how it works ---------- */
 .how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px}
@@ -452,7 +544,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     <div>
       <span class="eyebrow reveal">The Fertility Collective</span>
       <h1 class="reveal" data-delay="1">Supporting your journey through <em>fertility</em> and beyond</h1>
-      <p class="lede reveal" data-delay="2">Compassionate support for individuals and couples navigating fertility, pregnancy, birth, and the journey beyond.</p>
+      <p class="lede reveal" data-delay="2">Compassionate support for individuals and couples through fertility, pregnancy, birth, postpartum, and every season of life.</p>
       <div class="hero-cta reveal" data-delay="3">
         <a class="btn btn-primary" href="#contact">Get in Touch</a>
         <a class="btn btn-ghost" href="#offerings">Explore Offerings</a>
@@ -469,9 +561,9 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
 <section id="intro">
   <div class="wrap">
     <div class="intro-copy reveal">
-      <p>Whether you're trying to conceive naturally, preparing for IUI or IVF, expecting your baby, or looking for personalized guidance through pregnancy and birth, The Fertility Collective provides a welcoming space where you can feel informed, supported, and empowered.</p>
+      <p>Whether you're trying to conceive naturally, preparing for IUI or IVF, expecting your baby, adjusting to life with a newborn, or navigating another season of life, The Fertility Collective provides a welcoming space where you can feel informed, supported, and empowered.</p>
       <p>Our approach combines education, guided hypnosis, relaxation techniques, and personalized coaching to help strengthen the connection between mind and body and build confidence through every stage of your journey.</p>
-      <p>Today, our offerings focus on fertility, pregnancy, and birth, with plans to thoughtfully expand into postpartum, parenting, menopause, and wellness, continuing our commitment to supporting you through every season of life.</p>
+      <p>Our offerings span fertility, pregnancy and birth, postpartum, and women's wellness, including parenting, perimenopause, menopause, and life's other transitions, continuing our commitment to supporting you through every season of life.</p>
       <p>No matter where you are on your path, we're here to walk beside you with compassion, knowledge, and unwavering support.</p>
     </div>
   </div>
@@ -492,149 +584,633 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">What We Offer</span>
-      <h2>Support for every step of your journey</h2>
-      <p>Small group and private sessions designed to help you feel informed, empowered, and supported, whether you're trying to conceive naturally, pursuing IUI or IVF, or preparing for birth.</p>
+      <h2>Support for every season of your journey</h2>
+      <p>Small-group series and private sessions that combine guided hypnosis, relaxation, education, and personalized coaching. Choose the area that fits where you are right now.</p>
     </div>
 
-    <!-- Free monthly support group — full-width banner above the program grid -->
-    <div class="consult-banner reveal" id="support">
-      <div class="cb-main">
-        <div class="cb-tags">
-          <span class="cb-badge">Free to attend</span>
-          <span class="cb-meta">Second Wednesday monthly · 7:15 to 8:15pm</span>
-        </div>
-        <h3>Free Fertility Support Group</h3>
-        <p>Join us in person on the second Wednesday of each month at 7:15 PM for one hour at The Fertility Collective in North Reading. This is a warm, welcoming space to connect, share, and feel supported throughout your fertility journey. Open to individuals and couples navigating fertility at any stage of their journey.</p>
-        <div class="cb-dates">
-          <span class="date-chip">Sep 9</span>
-          <span class="date-chip">Oct 14</span>
-          <span class="date-chip">Nov 11</span>
-          <span class="date-chip">Dec 9</span>
-        </div>
-      </div>
-      <a class="btn btn-clay" href="https://forms.gle/9m8e8H228XwctgQG7" target="_blank" rel="noopener">Register Free</a>
+    <!-- Stage tabs. Each button controls the panel whose id matches aria-controls.
+         Deep links work too: #fertility, #pregnancy, #postpartum, #wellness (and
+         #support, which lives inside the fertility panel). -->
+    <div class="tabs reveal" role="tablist" aria-label="Offerings by stage">
+      <button class="tab" role="tab" id="tab-fertility" aria-controls="fertility" aria-selected="true" type="button">
+        <span class="tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V10"/><path d="M12 10c0-4.2 3-6.5 7.5-6.5C19.5 8 16.5 10 12 10z"/><path d="M12 14.5c0-3.2-2.3-5-6-5 0 3.2 2.3 5 6 5z"/></svg></span>
+        <span class="tab-title">Fertility</span>
+        <span class="tab-sub">Trying to conceive, IUI &amp; IVF</span>
+      </button>
+      <button class="tab" role="tab" id="tab-pregnancy" aria-controls="pregnancy" aria-selected="false" tabindex="-1" type="button">
+        <span class="tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+        <span class="tab-title">Pregnancy &amp; Birth</span>
+        <span class="tab-sub">Expecting &amp; preparing for birth</span>
+      </button>
+      <button class="tab" role="tab" id="tab-postpartum" aria-controls="postpartum" aria-selected="false" tabindex="-1" type="button">
+        <span class="tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+        <span class="tab-title">Postpartum</span>
+        <span class="tab-sub">Life after welcoming your baby</span>
+      </button>
+      <button class="tab" role="tab" id="tab-wellness" aria-controls="wellness" aria-selected="false" tabindex="-1" type="button">
+        <span class="tab-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5 0-8-3-8.5-7 3.3 0 5.7 1.2 7 3.3C9 14 8.6 9.5 12 5c3.4 4.5 3 9 1.5 12.3 1.3-2.1 3.7-3.3 7-3.3-.5 4-4 7-8.5 7z"/></svg></span>
+        <span class="tab-title">Women's Wellness</span>
+        <span class="tab-sub">Every season of life</span>
+      </button>
     </div>
 
-    <div class="cards">
-      <!-- Card 1: fertility group series -->
-      <div class="card reveal">
-        <h3>Fertility Relaxation Series</h3>
-        <div class="price-row"><span class="price-pill">$325 <small>/ 3 sessions · small group</small></span></div>
-        <p class="price-note">Covers all 3 weekly sessions, not per session.</p>
-        <div class="card-meta">3 sessions · 1 hr each · Small group</div>
-        <p class="card-desc">Three guided relaxation sessions tailored to fertility. Learn self hypnosis and visualization techniques to reduce stress, quiet limiting thoughts, and build a positive, hopeful mindset, while connecting with others on a similar path.</p>
-        <p class="card-alert"><span>A few spots are still available starting <strong>Sept 9</strong> &mdash; you're welcome to join us.</span></p>
-        <div class="dates">
-          <p class="dates-help">These sessions run for <strong>three consecutive weeks</strong>, one class a week. Choose the Wednesday or Saturday small group, then pick whichever session fits your schedule:</p>
-          <div class="date-group">
-            <div class="dlabel">Wednesday small group · 6 to 7pm</div>
-            <div class="date-grid" data-series="fertility-wed">
-              <span class="date-chip">Sep 9 · 16 · 23</span>
-              <span class="date-chip">Oct 7 · 14 · 21</span>
-              <span class="date-chip">Nov 4 · 11 · 18</span>
-              <span class="date-chip">Dec 2 · 9 · 16</span>
-            </div>
-          </div>
-          <div class="date-group">
-            <div class="dlabel">Saturday small group · 9:30 to 10:30am</div>
-            <div class="date-grid" data-series="fertility-sat">
-              <span class="date-chip">Oct 10 · 17 · 24</span>
-              <span class="date-chip">Nov 7 · 14 · 21</span>
-              <span class="date-chip">Dec 5 · 12 · 19</span>
-            </div>
-          </div>
-        </div>
-        <div class="spacer"></div>
-        <a class="btn btn-clay" href="https://buy.stripe.com/bJeeVf3So4kvdiYgkibfO00" target="_blank" rel="noopener">Reserve &amp; Pay Online</a>
-        <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
+    <!-- ===================== TAB: FERTILITY ===================== -->
+    <div class="panel active" role="tabpanel" id="fertility" aria-labelledby="tab-fertility">
+      <div class="panel-head">
+        <span class="eyebrow">Fertility</span>
+        <h3>Supporting your fertility journey, mind, body, and beyond.</h3>
+        <p>Trying to conceive can bring hope, questions, uncertainty, and a wide range of emotions. Whether you are just beginning, navigating secondary fertility, or preparing for IUI or IVF, we offer a welcoming space to pause, feel supported, and learn practical tools for greater calm and confidence.</p>
+        <p>Our fertility offerings combine guided hypnosis, relaxation, visualization, and education to support your emotional wellbeing throughout your journey.</p>
       </div>
 
-      <!-- Card 2: private coaching -->
-      <div class="card reveal" data-delay="1">
-        <h3>Fertility Coaching Private Sessions</h3>
-        <div class="price-row"><span class="price-pill">$475 <small>/ 3 session private</small></span></div>
-        <p class="price-note">Covers all 3 private sessions, not per session.</p>
-        <div class="card-meta">3 sessions · 1 hr 30 min each<br>Private 1:1</div>
-        <p class="card-desc">A personalized three-session program combining fertility coaching, guided hypnosis, and compassionate support throughout your fertility journey.</p>
-        <div class="includes">
-          <div class="ilabel">Your Private Fertility Sessions Include</div>
-          <ul>
-            <li>Three 90-minute private sessions personalized to your individual needs and fertility journey</li>
-            <li>Customized guided fertility hypnosis to support relaxation, reduce stress, calm the nervous system, and encourage a more positive mindset</li>
-            <li>A guided fertility journal to track your daily relaxation and self-hypnosis practice, reflections, intentions, affirmations, and questions</li>
-            <li>Nutrition guidance and fertility-supportive recipes to help you make nourishing and manageable choices</li>
-            <li>Suggested questions for your doctors to help you feel more prepared, informed, and confident during appointments</li>
-            <li>Information about complementary therapies, including acupuncture, massage, movement, meditation, and other mind-body approaches</li>
-            <li>Individualized fertility coaching and support to help you prepare for appointments or procedures, manage uncertainty, and address your personal concerns</li>
+      <!-- Free monthly support group — full-width banner above the program grid -->
+      <div class="consult-banner" id="support">
+        <div class="cb-main">
+          <div class="cb-tags">
+            <span class="cb-badge">Free to attend</span>
+            <span class="cb-meta">Second Wednesday monthly · 7:15 to 8:15pm</span>
+          </div>
+          <h4>Free Fertility Support Group</h4>
+          <p>Join us in person on the second Wednesday of each month at 7:15 PM for one hour at The Fertility Collective in North Reading. This is a warm, welcoming space to connect, share, and feel supported throughout your fertility journey. Open to individuals and couples navigating fertility at any stage of their journey.</p>
+          <div class="cb-dates" data-series="support">
+            <span class="date-chip">Sep 9</span>
+            <span class="date-chip">Oct 14</span>
+            <span class="date-chip">Nov 11</span>
+            <span class="date-chip">Dec 9</span>
+          </div>
+        </div>
+        <a class="btn btn-clay" href="https://forms.gle/9m8e8H228XwctgQG7" target="_blank" rel="noopener">Register Free</a>
+      </div>
+
+      <div class="cards">
+        <!-- Fertility: small-group series -->
+        <div class="card">
+          <h4>Fertility Relaxation Series</h4>
+          <div class="price-row"><span class="price-pill">$325 <small>/ 3 sessions · small group</small></span></div>
+          <p class="price-note">Covers all 3 weekly sessions, not per session.</p>
+          <div class="card-meta">Small group · 3 sessions · 1 hr each</div>
+          <p class="card-desc">A supportive three-session series where you can step away from the demands of your fertility journey and focus on yourself. Each session combines guided relaxation with practical techniques you can use at home, during appointments, or when the waiting feels especially difficult.</p>
+          <details class="sessions">
+            <summary>What the three sessions cover</summary>
+            <ol>
+              <li><span class="s-num">01</span><div><span class="s-title">Creating Calm</span>Explore the connection between mind and body and learn how guided hypnosis and self-hypnosis can support relaxation. Practice breathing and visualization techniques, experience a guided fertility relaxation, and begin creating a simple daily practice.</div></li>
+              <li><span class="s-num">02</span><div><span class="s-title">Working With Worries and Uncertainty</span>Build on your relaxation practice while exploring the thoughts, fears, and expectations that may feel heavy. Guided hypnosis, reflection, and supportive affirmations offer ways to respond to difficult moments with greater compassion and steadiness.</div></li>
+              <li><span class="s-num">03</span><div><span class="s-title">Carrying Your Practice Forward</span>Bring the tools together and explore how to use them through appointments, treatment, waiting periods, and changing circumstances. Practice self-hypnosis and visualization, and create a manageable plan for continuing your relaxation practice beyond the series.</div></li>
+            </ol>
+          </details>
+          <p class="card-outro">You will have opportunities to connect with others while sharing only what feels comfortable.</p>
+          <div class="dates" data-program="fertility">
+            <p class="dates-help">These sessions run for <strong>three consecutive weeks</strong>, one class a week. Choose the Wednesday or Saturday small group, then pick whichever session fits your schedule:</p>
+            <div class="date-group">
+              <div class="dlabel">Wednesday small group · 6 to 7pm</div>
+              <div class="date-grid" data-series="fertility-wed">
+                <span class="date-chip">Sep 9 · 16 · 23</span>
+                <span class="date-chip">Oct 7 · 14 · 21</span>
+                <span class="date-chip">Nov 4 · 11 · 18</span>
+                <span class="date-chip">Dec 2 · 9 · 16</span>
+              </div>
+            </div>
+            <div class="date-group">
+              <div class="dlabel">Saturday small group · 9:30 to 10:30am</div>
+              <div class="date-grid" data-series="fertility-sat">
+                <span class="date-chip">Oct 10 · 17 · 24</span>
+                <span class="date-chip">Nov 7 · 14 · 21</span>
+                <span class="date-chip">Dec 5 · 12 · 19</span>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <a class="btn btn-clay" href="https://buy.stripe.com/bJeeVf3So4kvdiYgkibfO00" target="_blank" rel="noopener">Reserve &amp; Pay Online</a>
+          <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
+        </div>
+
+        <!-- Fertility: private coaching -->
+        <div class="card">
+          <h4>Private Fertility Coaching + Guided Hypnosis</h4>
+          <div class="price-row"><span class="price-pill">$475 <small>/ 3 sessions · private</small></span></div>
+          <p class="price-note">Covers all 3 private sessions, not per session.</p>
+          <div class="card-meta">Private, one-on-one · 3 sessions · 90 min each</div>
+          <p class="card-desc">Personalized support with time to talk, ask questions, explore your concerns, and experience guided hypnosis tailored to your needs.</p>
+          <p class="card-desc">Across three sessions, we work together to understand what you are navigating, identify what would feel most supportive, and develop practices that fit your life. Sessions may focus on managing uncertainty, preparing emotionally for appointments or procedures, strengthening confidence, or making space for your own wellbeing.</p>
+          <div class="includes">
+            <div class="ilabel">Your private program includes</div>
+            <ul>
+              <li>Customized guided hypnosis and relaxation practices</li>
+              <li>Individualized fertility coaching and education</li>
+              <li>A guided fertility journal for reflection, intentions, affirmations, and at-home practice</li>
+              <li>Support preparing questions for your healthcare team</li>
+              <li>General nutrition information, nourishing recipes, and information about complementary wellness practices</li>
+            </ul>
+          </div>
+          <p class="card-outro">The focus of each session can evolve as your needs and circumstances change.</p>
+          <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Fertility Coach.</p>
+          <div class="spacer"></div>
+          <a class="btn btn-clay" href="https://buy.stripe.com/aFaaEZdsY04f2Ek4BAbfO01" target="_blank" rel="noopener">Book &amp; Pay Online</a>
+          <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
+        </div>
+      </div>
+
+      <!-- Fertility: bring your partner -->
+      <div class="consult-banner duo">
+        <div class="cb-main">
+          <div class="cb-tags">
+            <span class="cb-badge">With your partner</span>
+            <span class="cb-meta">An option for your private program · Three 90-minute sessions together · $625 total</span>
+          </div>
+          <h4>Private Sessions With Your Partner</h4>
+          <p>Include your partner in all three private sessions so you can learn, practice, and feel supported together. This option includes everything offered in our Private Fertility Coaching + Guided Hypnosis program, personalized coaching and education, customized guided hypnosis, a guided fertility journal, at-home practices, and supportive resources, with your partner participating alongside you.</p>
+          <p>Together, we explore ways to communicate your needs, understand each other's experiences, and strengthen your connection. Both partners have space to develop their own tools for calm and confidence while learning how to support one another through decisions, appointments, waiting periods, and changes along the way.</p>
+          <p class="cb-fine">Sessions are personalized to your shared goals and individual needs, whether your journey involves conception, fertility treatment, donor conception, surrogacy, or adoption.</p>
+        </div>
+        <a class="btn btn-clay" href="#contact">Ask About Partner Sessions</a>
+      </div>
+
+      <div class="info-grid">
+        <div class="info">
+          <h4>Why Three Sessions?</h4>
+          <p>Learning relaxation and self-hypnosis takes practice. Three sessions give you time to become familiar with the techniques, try them between visits, ask questions, and build on what feels helpful. The goal is to leave with tools you feel comfortable continuing on your own.</p>
+        </div>
+        <div class="info">
+          <h4>Your Journey Is Welcome Here</h4>
+          <p>There are many ways to become a parent. Whether you are trying to conceive naturally, pursuing IUI or IVF, using donor eggs, sperm, or embryos, or welcoming a child through surrogacy or adoption, you are welcome at The Fertility Collective.</p>
+          <p>We welcome individuals and couples of all genders, sexual orientations, and relationship statuses, including those pursuing parenthood on their own.</p>
+          <p>Our coaching, guided hypnosis, and relaxation practices offer space to explore your feelings, navigate uncertainty, and build calm and confidence. Your support is shaped around your experience and the path you are taking toward parenthood.</p>
+        </div>
+      </div>
+
+      <div class="panel-cta">
+        <div class="pc-text">
+          <h4>Let's find the right fit</h4>
+          <p>Whether you would appreciate individual support, time with your partner, or the connection of a small group, we would be happy to help you choose.</p>
+        </div>
+        <div class="pc-actions">
+          <a class="btn btn-clay" href="tel:+19788861869">Call or Text 978.886.1869</a>
+          <a class="btn btn-ghost" href="mailto:fertilitycollectiveinfo@gmail.com">Email Jacqui</a>
+        </div>
+      </div>
+      <p class="panel-fine">Our services provide educational and emotional support and complement your medical care. They do not replace medical advice, diagnosis, or treatment, and no specific fertility outcome is guaranteed.</p>
+    </div>
+
+    <!-- ===================== TAB: PREGNANCY & BIRTH ===================== -->
+    <div class="panel" role="tabpanel" id="pregnancy" aria-labelledby="tab-pregnancy">
+      <div class="panel-head">
+        <span class="eyebrow">Pregnancy &amp; Birth</span>
+        <h3>Support for where you are now, and what comes next.</h3>
+        <p>Pregnancy and preparing for birth can bring different questions, emotions, and needs. We offer dedicated support for both: space to find greater calm throughout pregnancy, and practical preparation as you approach your baby's birth.</p>
+      </div>
+
+      <div class="cards">
+        <!-- Focus 1: pregnancy relaxation -->
+        <div class="card">
+          <span class="card-kicker">Focus · Pregnancy</span>
+          <h4>Pregnancy Relaxation &amp; Support</h4>
+          <p class="card-tag">Finding calm, connection, and confidence from the beginning.</p>
+          <p class="card-desc">You do not have to wait until you are preparing for birth to receive support. From the earliest weeks, pregnancy can bring excitement alongside uncertainty. You may find yourself waiting for appointments, worrying between milestones, adjusting to changes in your body, or finding it difficult to settle into the experience, especially after a challenging fertility journey or previous loss.</p>
+          <p class="card-desc">Our pregnancy sessions offer a gentle space to explore those feelings and develop practices that help you feel more grounded. Through guided hypnosis, breathing, visualization, and reflection, we support you in creating more room for rest, connection, and moments of enjoyment, without pressure to feel positive all the time.</p>
+          <details class="sessions" open>
+            <summary>Across three sessions, we focus on</summary>
+            <ol>
+              <li><span class="s-num">01</span><div><span class="s-title">Creating a Foundation of Calm</span>Explore your hopes, concerns, and current experience. Begin learning breathing, relaxation, and self-hypnosis practices that you can return to during everyday moments, appointments, or periods of uncertainty.</div></li>
+              <li><span class="s-num">02</span><div><span class="s-title">Connection and Compassion</span>Make space for your changing emotions and relationship with your body. Guided hypnosis, visualization, and journaling invite connection with yourself and your baby at a pace that feels comfortable.</div></li>
+              <li><span class="s-num">03</span><div><span class="s-title">Supporting Yourself Through Pregnancy</span>Bring your tools together into a manageable daily practice. Explore ways to respond to worries, communicate your needs, and continue caring for your emotional wellbeing as pregnancy progresses.</div></li>
+            </ol>
+          </details>
+        </div>
+
+        <!-- Focus 2: birth preparation -->
+        <div class="card">
+          <span class="card-kicker">Focus · Birth</span>
+          <h4>Birth Preparation &amp; Guided Hypnosis</h4>
+          <p class="card-tag">Preparing your mind and body for labor and birth.</p>
+          <p class="card-desc">As birth approaches, your focus may shift toward what labor will feel like, how you will cope, and what support you will need. Our birth preparation sessions combine education, guided hypnosis, and practical comfort techniques to help you feel informed and prepared. You will practice ways to soften tension, steady your breathing, focus your attention, and find rest between moments of effort.</p>
+          <p class="card-desc">We also make space for your questions and birth preferences, helping you communicate what matters to you while remaining supported if circumstances change.</p>
+          <details class="sessions" open>
+            <summary>Across three sessions, we focus on</summary>
+            <ol>
+              <li><span class="s-num">01</span><div><span class="s-title">Understanding Birth and Building Confidence</span>Explore the labor and birth process, your expectations, and any worries you are carrying. Begin guided hypnosis and relaxation practices, and identify questions to discuss with your healthcare team.</div></li>
+              <li><span class="s-num">02</span><div><span class="s-title">Practicing Tools for Labor</span>Practice breathing, visualization, self-hypnosis, and focused relaxation. Explore comfort measures, movement, and positions that may support you during labor, according to your needs and your healthcare team's guidance.</div></li>
+              <li><span class="s-num">03</span><div><span class="s-title">Bringing Your Preparation Together</span>Create a practical plan for using your tools during birth. Explore your preferences, communication with your care team, and ways a partner or support person can help. Include preparation for different birth experiences so you have supportive practices to draw on when plans change.</div></li>
+            </ol>
+          </details>
+          <p class="card-note">These tools can be used alongside your chosen pain relief and medical care, whether your birth involves spontaneous labor, induction, or a cesarean.</p>
+        </div>
+      </div>
+
+      <div class="sub-head">
+        <h3>Choose Your Setting</h3>
+        <p>Both focuses are offered in a small group or privately. Pick the setting that suits you.</p>
+      </div>
+
+      <div class="cards">
+        <!-- Setting: small group -->
+        <div class="card">
+          <h4>Small-Group Relaxation Series</h4>
+          <div class="price-row"><span class="price-pill">$325 <small>/ 3 sessions · small group</small></span></div>
+          <p class="price-note">Covers all 3 weekly sessions, not per session.</p>
+          <div class="card-meta">Small group · 3 sessions · 1 hr each</div>
+          <p class="card-desc">Three one-hour sessions offering guided practice, education, and connection with others navigating pregnancy and preparing for birth.</p>
+          <div class="dates" data-program="pregnancy">
+            <p class="dates-help">These sessions run for <strong>three consecutive weeks</strong>, one class a week. Choose the Thursday or Saturday small group, then pick whichever session fits your schedule:</p>
+            <div class="date-group">
+              <div class="dlabel">Thursday small group · 6 to 7pm</div>
+              <div class="date-grid" data-series="pregnancy-thu">
+                <span class="date-chip">Sep 10 · 17 · 24</span>
+                <span class="date-chip">Oct 8 · 15 · 22</span>
+                <span class="date-chip">Nov 5 · 12 · 19</span>
+                <span class="date-chip">Dec 3 · 10 · 17</span>
+              </div>
+            </div>
+            <div class="date-group">
+              <div class="dlabel">Saturday small group · 11:30am to 12:30pm</div>
+              <div class="date-grid" data-series="pregnancy-sat">
+                <span class="date-chip">Oct 10 · 17 · 24</span>
+                <span class="date-chip">Nov 7 · 14 · 21</span>
+                <span class="date-chip">Dec 5 · 12 · 19</span>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <a class="btn btn-clay" href="https://buy.stripe.com/7sY00l60w5oz0wc4BAbfO02" target="_blank" rel="noopener">Reserve &amp; Pay Online</a>
+          <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
+        </div>
+
+        <!-- Setting: private -->
+        <div class="card">
+          <h4>Private Coaching + Guided Hypnosis</h4>
+          <div class="price-row"><span class="price-pill">$475 <small>/ 3 sessions · private</small></span></div>
+          <p class="price-note">Covers all 3 private sessions, not per session.</p>
+          <div class="card-meta">Private, one-on-one · 3 sessions · 90 min each</div>
+          <p class="card-desc">Three personalized 90-minute sessions with additional time for your questions, concerns, and individual goals, focused on pregnancy support or preparing for birth.</p>
+          <div class="includes">
+            <div class="ilabel">Your private program includes</div>
+            <ul>
+              <li>Customized guided hypnosis and relaxation practices</li>
+              <li>A guided pregnancy journal for reflection, connection, and at-home practice</li>
+              <li>Resources for continuing your practice at home</li>
+              <li>Space to explore your birth preferences and prepare questions for your healthcare team</li>
+            </ul>
+          </div>
+          <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Childbirth Educator.</p>
+          <div class="spacer"></div>
+          <a class="btn btn-clay" href="https://buy.stripe.com/fZu7sN4Ws3gra6M5FEbfO03" target="_blank" rel="noopener">Book &amp; Pay Online</a>
+          <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
+        </div>
+      </div>
+
+      <!-- Pregnancy: bring your partner -->
+      <div class="consult-banner duo">
+        <div class="cb-main">
+          <div class="cb-tags">
+            <span class="cb-badge">With your partner</span>
+            <span class="cb-meta">Three 90-minute sessions together · $625 total</span>
+          </div>
+          <h4>Private Pregnancy or Birth Sessions With Your Partner</h4>
+          <p>Include your partner in your private program, with a focus on pregnancy support or preparing for birth. This option includes everything offered in our private sessions, personalized coaching and education, customized guided hypnosis, a guided pregnancy journal, and resources for practicing at home, with your partner participating alongside you.</p>
+          <ul class="cb-list" style="grid-template-columns:1fr">
+            <li><strong>For pregnancy:</strong> Explore ways to navigate uncertainty, communicate your needs, and feel more connected. Both partners can develop tools for calm and confidence while learning how to support each other throughout pregnancy.</li>
+            <li><strong>For birth preparation:</strong> Practice breathing, relaxation, visualization, and self-hypnosis together. Your partner will learn practical ways to offer reassurance, support your comfort, and help communicate your preferences during labor and birth.</li>
           </ul>
+          <p class="cb-fine">Sessions are tailored to your shared goals and individual needs, giving both of you space to ask questions and prepare together.</p>
         </div>
-        <p class="card-outro">You will leave the program with supportive strategies, personalized resources, and a daily relaxation practice that you can continue throughout your fertility journey.</p>
-        <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Fertility Coach.</p>
-        <div class="spacer"></div>
-        <a class="btn btn-clay" href="https://buy.stripe.com/aFaaEZdsY04f2Ek4BAbfO01" target="_blank" rel="noopener">Book &amp; Pay Online</a>
-        <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
+        <a class="btn btn-clay" href="#contact">Ask About Partner Sessions</a>
       </div>
 
-      <!-- Card 3: pregnancy group series -->
-      <div class="card reveal" data-delay="2">
-        <h3>Pregnancy &amp; Birth Relaxation Series</h3>
-        <div class="price-row"><span class="price-pill">$325 <small>/ 3 sessions · small group</small></span></div>
-        <p class="price-note">Covers all 3 weekly sessions, not per session.</p>
-        <div class="card-meta">3 sessions · 1 hr each · Small group</div>
-        <p class="card-desc">Three guided relaxation sessions tailored to pregnancy and birth. Learn self hypnosis and visualization techniques to support you through pregnancy as you prepare for birth and motherhood. Reduce stress, build confidence, and cultivate a calm, positive mindset, alongside other expectant mothers.</p>
-        <div class="dates">
-          <p class="dates-help">These sessions run for <strong>three consecutive weeks</strong>, one class a week. Choose the Thursday or Saturday small group, then pick whichever session fits your schedule:</p>
-          <div class="date-group">
-            <div class="dlabel">Thursday small group · 6 to 7pm</div>
-            <div class="date-grid" data-series="pregnancy-thu">
-              <span class="date-chip">Sep 10 · 17 · 24</span>
-              <span class="date-chip">Oct 8 · 15 · 22</span>
-              <span class="date-chip">Nov 5 · 12 · 19</span>
-              <span class="date-chip">Dec 3 · 10 · 17</span>
-            </div>
+      <!-- Stork Ready childbirth education -->
+      <div class="consult-banner partner">
+        <div class="cb-main">
+          <div class="cb-tags">
+            <span class="cb-badge">Childbirth education</span>
+            <span class="cb-meta">Alongside your classes at Stork Ready</span>
           </div>
-          <div class="date-group">
-            <div class="dlabel">Saturday small group · 11:30am to 12:30pm</div>
-            <div class="date-grid" data-series="pregnancy-sat">
-              <span class="date-chip">Oct 10 · 17 · 24</span>
-              <span class="date-chip">Nov 7 · 14 · 21</span>
-              <span class="date-chip">Dec 5 · 12 · 19</span>
-            </div>
-          </div>
-        </div>
-        <div class="spacer"></div>
-        <a class="btn btn-clay" href="https://buy.stripe.com/7sY00l60w5oz0wc4BAbfO02" target="_blank" rel="noopener">Reserve &amp; Pay Online</a>
-        <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
-      </div>
-
-      <!-- Card 4: pregnancy private coaching -->
-      <div class="card reveal" data-delay="3">
-        <h3>Pregnancy &amp; Birth Private Sessions</h3>
-        <div class="price-row"><span class="price-pill">$475 <small>/ 3 session private</small></span></div>
-        <p class="price-note">Covers all 3 private sessions, not per session.</p>
-        <div class="card-meta">3 sessions · 1 hr 30 min each<br>Private 1:1</div>
-        <p class="card-desc">A personalized three-session program combining guided hypnosis, relaxation, education, and compassionate support to help you feel calm, confident, and prepared throughout pregnancy and birth.</p>
-        <div class="includes">
-          <div class="ilabel">Your Private Pregnancy &amp; Birth Sessions Include</div>
-          <ul>
-            <li>Three 90-minute private sessions personalized to your pregnancy, individual needs, and birth preferences</li>
-            <li>Customized guided pregnancy and birth hypnosis to encourage relaxation, reduce fear and anxiety, and build confidence in yourself and your body</li>
-            <li>A guided pregnancy journal to track your relaxation and self-hypnosis practice while creating space for reflection, connection, affirmations, and meaningful moments throughout your pregnancy</li>
-            <li>Guidance in exploring your birth preferences so you can better understand your options and communicate what matters most to you with your healthcare team</li>
-            <li>Relaxation and comfort techniques for labor, including breathing, visualization, self-hypnosis, and other supportive practices</li>
-            <li>Preparation for different birth experiences to help you feel informed, flexible, and supported, even when circumstances change</li>
-            <li>Individualized pregnancy and birth support to address your questions, concerns, fears, and personal goals in a private and compassionate setting</li>
+          <h4>Alongside Your Childbirth Education at Stork Ready</h4>
+          <p>Our pregnancy and birth sessions complement your childbirth education at Stork Ready, giving you additional time to practice guided hypnosis, relaxation, and visualization while exploring your individual questions and concerns.</p>
+          <ul class="cb-list">
+            <li><strong>Childbirth Class:</strong> labor and birth, pain relief options, medical interventions, comfort techniques, and the role of your support person.</li>
+            <li><strong>Advanced Comfort Measures Class:</strong> hands-on practice with breathing, relaxation, massage, and comfort positions using tools such as birth balls and a rebozo.</li>
           </ul>
+          <p class="cb-fine">Together, these offerings provide education, practical preparation, and personalized emotional support as you approach birth.</p>
         </div>
-        <p class="card-outro">You will leave the program with supportive strategies, personalized resources, and relaxation practices that you can continue using throughout pregnancy, labor, birth and beyond.</p>
-        <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Childbirth Educator.</p>
-        <div class="spacer"></div>
-        <a class="btn btn-clay" href="https://buy.stripe.com/fZu7sN4Ws3gra6M5FEbfO03" target="_blank" rel="noopener">Book &amp; Pay Online</a>
-        <p class="card-alt-contact">Questions first? <a class="under" href="#contact">Call, text, or email Jacqui</a></p>
+        <a class="btn btn-clay" href="https://www.storkready.com" target="_blank" rel="noopener">Explore Classes at StorkReady.com</a>
       </div>
+
+      <div class="panel-cta">
+        <div class="pc-text">
+          <h4>Let's find the right fit</h4>
+          <p>Whether you are newly pregnant or getting ready for birth, we would be happy to help you choose the support that meets your needs.</p>
+        </div>
+        <div class="pc-actions">
+          <a class="btn btn-clay" href="tel:+19788861869">Call or Text 978.886.1869</a>
+          <a class="btn btn-ghost" href="mailto:fertilitycollectiveinfo@gmail.com">Email Jacqui</a>
+        </div>
+      </div>
+      <p class="panel-fine">Our services complement your prenatal and birth care. They do not replace medical advice or treatment, and no particular pregnancy or birth outcome is guaranteed.</p>
     </div>
 
-    <!-- Partner referral — Circle&Bloom guided meditation programs -->
+    <!-- ===================== TAB: POSTPARTUM ===================== -->
+    <div class="panel" role="tabpanel" id="postpartum" aria-labelledby="tab-postpartum">
+      <div class="panel-head">
+        <span class="eyebrow">Postpartum</span>
+        <h3>Space to care for yourself as you care for your baby.</h3>
+        <p>Life after welcoming a baby can bring love, joy, uncertainty, exhaustion, and emotions you may not have expected. As you adjust to new routines and responsibilities, your wellbeing deserves attention, too.</p>
+        <p>Our postpartum offerings combine guided hypnosis, relaxation, reflection, and supportive education to help you find moments of calm, communicate your needs, and feel more connected to yourself.</p>
+      </div>
+
+      <div class="cards">
+        <!-- Postpartum: small-group series -->
+        <div class="card">
+          <h4>Postpartum Relaxation Series</h4>
+          <div class="price-row"><span class="price-pill">$325 <small>/ 3 sessions · small group</small></span></div>
+          <p class="price-note">Covers all 3 sessions, not per session.</p>
+          <div class="card-meta">Small group · 3 sessions · 1 hr each</div>
+          <p class="card-desc">A welcoming space to pause, recharge, and connect with others navigating the postpartum transition. Learn practical relaxation tools you can use during busy days, interrupted nights, and moments that feel overwhelming.</p>
+          <details class="sessions">
+            <summary>What the three sessions cover</summary>
+            <ol>
+              <li><span class="s-num">01</span><div><span class="s-title">Finding Moments of Calm</span>Begin breathing, guided relaxation, and self-hypnosis practices that can fit into life with a new baby. Explore small, manageable ways to make space for yourself.</div></li>
+              <li><span class="s-num">02</span><div><span class="s-title">Making Room for Your Experience</span>Explore changing emotions, expectations, and your sense of identity. Guided hypnosis and reflection offer space for self-compassion without pressure to experience postpartum a certain way.</div></li>
+              <li><span class="s-num">03</span><div><span class="s-title">Building Your Supportive Routine</span>Bring your tools together into a flexible daily practice. Explore asking for help, communicating your needs, and creating realistic opportunities for rest and connection.</div></li>
+            </ol>
+          </details>
+          <p class="card-alert"><span>The small-group series is for adults only. <strong>Babies are welcome in private sessions.</strong></span></p>
+          <div class="dates" data-program="postpartum">
+            <p class="dates-help">This series runs as <strong>three sessions</strong> with the same small group. Upcoming session dates:</p>
+            <div class="date-group">
+              <div class="dlabel tba">Small group · schedule to be announced</div>
+              <div class="date-grid" data-series="postpartum">
+                <span class="date-chip tba">Dates coming soon · contact us to be the first to know</span>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <a class="btn btn-clay" href="#contact">Get in Touch to Reserve</a>
+          <p class="card-alt-contact">Or <a class="under" href="tel:+19788861869">call or text 978.886.1869</a></p>
+        </div>
+
+        <!-- Postpartum: private coaching -->
+        <div class="card">
+          <h4>Private Postpartum Coaching + Guided Hypnosis</h4>
+          <div class="price-row"><span class="price-pill">$475 <small>/ 3 sessions · private</small></span></div>
+          <p class="price-note">Covers all 3 private sessions, not per session.</p>
+          <div class="card-meta">Private, one-on-one · 3 sessions · 90 min each</div>
+          <p class="card-desc">Personalized support with time to talk about your experience, ask questions, and practice relaxation in a setting that responds to your needs. Sessions may focus on feeling overwhelmed, adjusting to changing routines, reconnecting with yourself, navigating expectations, or finding greater confidence in your new role.</p>
+          <div class="includes">
+            <div class="ilabel">Your private program includes</div>
+            <ul>
+              <li>Three sessions tailored to your postpartum experience and personal goals</li>
+              <li>Customized guided hypnosis, breathing, and relaxation practices</li>
+              <li>Space for reflection, journaling, and supportive education</li>
+              <li>Practical ways to communicate your needs and seek support</li>
+              <li>At-home practices that fit around caring for your baby</li>
+            </ul>
+          </div>
+          <p class="card-alert"><span><strong>Your baby is welcome.</strong> We can pause for feeding, soothing, or changing and adapt relaxation practices around having your baby with you. There is no expectation that your baby will remain quiet or that the session will be uninterrupted.</span></p>
+          <p class="card-note">Facilitated by a Certified Hypnotherapist &amp; Childbirth Educator.</p>
+          <div class="spacer"></div>
+          <a class="btn btn-clay" href="#contact">Get in Touch to Book</a>
+          <p class="card-alt-contact">Or <a class="under" href="tel:+19788861869">call or text 978.886.1869</a></p>
+        </div>
+      </div>
+
+      <!-- Postpartum: bring your partner -->
+      <div class="consult-banner duo">
+        <div class="cb-main">
+          <div class="cb-tags">
+            <span class="cb-badge">With your partner</span>
+            <span class="cb-meta">Three 90-minute sessions together · $625 total</span>
+          </div>
+          <h4>Private Postpartum Sessions With Your Partner</h4>
+          <p>Everything included in the private postpartum program, with your partner participating alongside you. These sessions give both partners space to explore the transition to parenthood, develop their own tools for calm, and learn how to support each other.</p>
+          <p>Together, we can focus on communicating needs, sharing responsibilities, understanding different experiences, and maintaining connection as your routines and relationship evolve. Guided hypnosis and relaxation practices are tailored to your shared goals and individual needs.</p>
+          <p class="cb-fine">Your baby is welcome in these private sessions, too. We work around your baby's needs, with time for feeding, soothing, changing, and breaks.</p>
+        </div>
+        <a class="btn btn-clay" href="#contact">Ask About Partner Sessions</a>
+      </div>
+
+      <div class="panel-cta">
+        <div class="pc-text">
+          <h4>Let's find the right fit</h4>
+          <p>Whether you would appreciate individual support, time to reconnect with your partner, or the connection of a small group, we would be happy to help you choose.</p>
+        </div>
+        <div class="pc-actions">
+          <a class="btn btn-clay" href="tel:+19788861869">Call or Text 978.886.1869</a>
+          <a class="btn btn-ghost" href="mailto:fertilitycollectiveinfo@gmail.com">Email Jacqui</a>
+        </div>
+      </div>
+      <p class="panel-fine">Our services provide educational and emotional support and complement your postpartum healthcare. They do not replace medical or mental health assessment or treatment.</p>
+    </div>
+
+    <!-- ===================== TAB: WOMEN'S WELLNESS ===================== -->
+    <div class="panel" role="tabpanel" id="wellness" aria-labelledby="tab-wellness">
+      <div class="panel-head">
+        <span class="eyebrow">Women's Wellness</span>
+        <h3>Supporting you through every season of life.</h3>
+        <p>Your needs change as life unfolds. Whether you are navigating fertility, pregnancy, birth, postpartum, parenting, menopause, an empty nest, or another transition, you deserve space to care for yourself.</p>
+        <p>Our private women's wellness sessions combine personalized coaching, guided hypnosis, relaxation, and reflection. Together, we explore what you are experiencing and develop practical tools to help you feel calmer, more confident, and more connected to yourself. You do not need to be preparing for pregnancy or welcoming a baby to receive support here.</p>
+      </div>
+
+      <!-- Wellness: private program (full width, two inner columns) -->
+      <div class="card wide">
+        <div class="wide-grid">
+          <div>
+            <h4>Private Women's Wellness Coaching + Guided Hypnosis</h4>
+            <div class="price-row"><span class="price-pill">$475 <small>/ 3 sessions · private</small></span></div>
+            <p class="price-note">Covers all 3 private sessions, not per session.</p>
+            <div class="card-meta">Private, one-on-one · 3 sessions · 90 min each</div>
+            <p class="card-desc">A supportive space to pause, talk openly, and focus on what matters to you. Each session is shaped around your needs, whether you are adjusting to change, feeling overwhelmed, exploring your identity, or making room for your own wellbeing.</p>
+            <div class="includes">
+              <div class="ilabel">Your sessions may focus on</div>
+              <ul>
+                <li><strong>Fertility:</strong> Navigating uncertainty, treatment, changing plans, or your path toward parenthood.</li>
+                <li><strong>Pregnancy and birth:</strong> Developing relaxation practices and exploring your hopes, concerns, and preparation.</li>
+                <li><strong>Postpartum:</strong> Adjusting to new responsibilities, communicating your needs, and reconnecting with yourself.</li>
+                <li><strong>Parenting:</strong> Making space for your wellbeing while navigating the emotional demands of caring for others.</li>
+                <li><strong>Perimenopause and menopause:</strong> Supporting your emotional wellbeing and sense of self through this transition.</li>
+                <li><strong>Empty nesting:</strong> Exploring changing roles, relationships, and opportunities as your children become more independent.</li>
+                <li><strong>Life beyond these stages:</strong> Navigating personal transitions, setting boundaries, building confidence, or creating space for a new direction.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="includes">
+              <div class="ilabel">What your private program includes</div>
+              <ul>
+                <li>Three 90-minute sessions personalized to your goals</li>
+                <li>Customized guided hypnosis and visualization</li>
+                <li>Breathing, relaxation, and self-hypnosis practices</li>
+                <li>Supportive coaching and opportunities for reflection and journaling</li>
+                <li>Practical tools for responding to stress and communicating your needs</li>
+                <li>At-home practices that fit your daily life</li>
+              </ul>
+            </div>
+            <details class="sessions" open>
+              <summary>How we work together</summary>
+              <ol>
+                <li><span class="s-num">01</span><div><span class="s-title">Understanding Your Needs</span>Explore your current experience and what you would like support with. Begin guided hypnosis and simple relaxation practices tailored to your goals.</div></li>
+                <li><span class="s-num">02</span><div><span class="s-title">Building Your Practice</span>Reflect on what feels helpful and explore thoughts, expectations, or habits you would like to approach differently. Continue personalized hypnosis and develop tools you can use between sessions.</div></li>
+                <li><span class="s-num">03</span><div><span class="s-title">Moving Forward With Support</span>Bring your practices together and create a realistic plan for continuing them. Reflect on what you have learned and what you need as you move forward.</div></li>
+              </ol>
+            </details>
+            <p class="card-outro">The focus can evolve throughout the program as your needs change.</p>
+            <p class="card-note">Facilitated by a Certified Hypnotherapist.</p>
+            <a class="btn btn-clay" href="#contact">Get in Touch to Book</a>
+            <p class="card-alt-contact" style="text-align:left">Or <a class="under" href="tel:+19788861869">call or text 978.886.1869</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wellness: bring your partner -->
+      <div class="consult-banner duo" style="margin-top:0">
+        <div class="cb-main">
+          <div class="cb-tags">
+            <span class="cb-badge">With your partner</span>
+            <span class="cb-meta">Three personalized 90-minute sessions together · $625 total</span>
+          </div>
+          <h4>Private Women's Wellness Sessions With Your Partner</h4>
+          <p>A supportive space to focus on your wellbeing while strengthening your connection with your partner. Sessions can explore parenting, menopause, empty nesting, or other life transitions. This option includes everything offered in our private women's wellness program, with your partner participating alongside you: personalized coaching, customized guided hypnosis, breathing, visualization, reflection, and at-home relaxation practices.</p>
+          <ul class="cb-list">
+            <li>Communicate your needs and better understand each other's experiences</li>
+            <li>Develop individual tools for calm, confidence, and responding to stress</li>
+            <li>Navigate changing roles, responsibilities, and expectations</li>
+            <li>Create shared relaxation practices and meaningful moments of connection</li>
+            <li>Support each other while making space for your individual wellbeing</li>
+          </ul>
+          <p class="cb-fine">Each session is tailored to your shared goals and personal needs, with time for conversation, guided practice, and reflection.</p>
+        </div>
+        <a class="btn btn-clay" href="#contact">Ask About Partner Sessions</a>
+      </div>
+
+      <div class="sub-head">
+        <h3>Small-Group Relaxation Series</h3>
+        <p>No previous experience with hypnosis is needed. Participate, relax, and share only what feels comfortable.</p>
+      </div>
+
+      <div class="cards">
+        <!-- Wellness: monthly small-group series -->
+        <div class="card">
+          <h4>Women's Wellness Relaxation Series</h4>
+          <div class="price-row"><span class="price-pill">$325 <small>/ 3 sessions · small group</small></span></div>
+          <p class="price-note">Covers all 3 sessions, not per session.</p>
+          <div class="card-meta">Small group · 3 sessions · 1 hr each<br>Thursdays, 7:30 to 8:30pm · once a month for 3 months</div>
+          <p class="card-desc">A welcoming space for women of all ages and stages of life to pause, deeply relax, and reconnect with themselves. This series may be especially supportive for caregivers, busy professionals, mothers, empty nesters, or women navigating any other life transition, and anyone who spends much of her time caring for others, managing responsibilities, or moving from one demand to the next.</p>
+          <p class="card-desc">You do not need to be experiencing a particular challenge to participate. Across three guided sessions, you will learn and practice hypnosis, visualization, breathing, and self-hypnosis techniques designed to help calm the nervous system and create a greater sense of balance.</p>
+          <details class="sessions">
+            <summary>What the three sessions cover</summary>
+            <ol>
+              <li><span class="s-num">01</span><div><span class="s-title">Creating Space to Pause</span>Step away from outside responsibilities and begin learning how hypnosis and intentional breathing can help the mind and body settle. Experience a deeply relaxing guided hypnosis session and learn a simple practice to use at home.</div></li>
+              <li><span class="s-num">02</span><div><span class="s-title">Releasing Tension and Reconnecting With Yourself</span>Build on your relaxation practice while creating space to notice your own needs. Guided hypnosis and visualization encourage self-compassion, renewed energy, and a stronger connection with yourself.</div></li>
+              <li><span class="s-num">03</span><div><span class="s-title">Carrying Calm Into Everyday Life</span>Bring the techniques together and learn how to use self-hypnosis during busy, stressful, or emotionally demanding moments. Create a realistic relaxation practice that can continue beyond the series.</div></li>
+            </ol>
+          </details>
+          <div class="includes">
+            <div class="ilabel">This series can support women navigating</div>
+            <ul>
+              <li>Caregiving and the emotional demands of caring for others</li>
+              <li>Busy careers, leadership roles, or demanding schedules</li>
+              <li>Parenting and changing family responsibilities</li>
+              <li>Perimenopause, menopause, and other physical or emotional transitions</li>
+              <li>Empty nesting, retirement, or a changing sense of identity</li>
+              <li>Relationship changes, personal growth, or a new chapter of life</li>
+              <li>Everyday stress and the desire for more calm, rest, and balance</li>
+            </ul>
+          </div>
+          <div class="dates" data-program="wellness">
+            <p class="dates-help">This series meets <strong>once a month for three months</strong>, same small group each time. Upcoming session dates:</p>
+            <div class="date-group">
+              <div class="dlabel">Thursday small group · 7:30 to 8:30pm</div>
+              <div class="date-grid" data-series="wellness-thu">
+                <span class="date-chip tba">Dates coming soon · contact us to be the first to know</span>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <a class="btn btn-clay" href="#contact">Get in Touch to Reserve</a>
+          <p class="card-alt-contact">Or <a class="under" href="tel:+19788861869">call or text 978.886.1869</a></p>
+        </div>
+
+        <!-- Wellness: perimenopause & menopause series -->
+        <div class="card">
+          <h4>Perimenopause &amp; Menopause Relaxation Series</h4>
+          <div class="price-row"><span class="price-pill">$325 <small>/ 3 sessions · small group</small></span></div>
+          <p class="price-note">Covers all 3 sessions, not per session.</p>
+          <div class="card-meta">Small group · 3 sessions · 1 hr each</div>
+          <p class="card-desc">Perimenopause and menopause can bring changes in sleep, energy, mood, concentration, body comfort, relationships, and your sense of self. This three-session series offers a calm, welcoming space to slow down, care for your emotional wellbeing, and feel supported through this transition.</p>
+          <p class="card-desc">Through guided hypnosis, visualization, intentional breathing, and self-hypnosis, you will learn practical techniques to help calm the nervous system, release tension, and respond to challenging moments with greater steadiness and self-compassion.</p>
+          <details class="sessions">
+            <summary>What the three sessions cover</summary>
+            <ol>
+              <li><span class="s-num">01</span><div><span class="s-title">Creating Calm Through Change</span>Step away from daily responsibilities and create space to acknowledge what you are experiencing. Learn how hypnosis, breathing, and relaxation can help your mind and body settle while beginning a simple practice to use at home.</div></li>
+              <li><span class="s-num">02</span><div><span class="s-title">Supporting Rest, Balance, and Emotional Wellbeing</span>Build on your relaxation practice with guided hypnosis and visualization focused on rest, self-compassion, and reconnecting with your needs. Explore techniques you can use when you feel tense, overwhelmed, restless, or emotionally unsettled.</div></li>
+              <li><span class="s-num">03</span><div><span class="s-title">Moving Forward With Confidence</span>Bring your tools together and create a realistic self-hypnosis and relaxation practice that fits your everyday life. Reflect on this stage as a time of transition, personal growth, and renewed attention to your own wellbeing.</div></li>
+            </ol>
+          </details>
+          <div class="includes">
+            <div class="ilabel">This series offers support for women experiencing</div>
+            <ul>
+              <li>Changes in sleep, energy, mood, or concentration</li>
+              <li>Increased stress, tension, or feeling overwhelmed</li>
+              <li>Changing family roles, relationships, or responsibilities</li>
+              <li>A desire to reconnect with themselves and their needs</li>
+              <li>Questions about identity and this next season of life</li>
+              <li>The need for more rest, balance, confidence, and self-compassion</li>
+            </ul>
+          </div>
+          <div class="dates" data-program="menopause">
+            <p class="dates-help">This series runs as <strong>three sessions</strong> with the same small group. Upcoming session dates:</p>
+            <div class="date-group">
+              <div class="dlabel tba">Small group · schedule to be announced</div>
+              <div class="date-grid" data-series="menopause">
+                <span class="date-chip tba">Dates coming soon · contact us to be the first to know</span>
+              </div>
+            </div>
+          </div>
+          <p class="card-note">This series provides relaxation and emotional wellness support. It does not replace medical advice, diagnosis, or treatment for perimenopause or menopause symptoms.</p>
+          <div class="spacer"></div>
+          <a class="btn btn-clay" href="#contact">Get in Touch to Reserve</a>
+          <p class="card-alt-contact">Or <a class="under" href="tel:+19788861869">call or text 978.886.1869</a></p>
+        </div>
+      </div>
+
+      <!-- Wellness: create your own private group series -->
+      <div class="consult-banner" style="margin:24px 0 0">
+        <div class="cb-main">
+          <div class="cb-tags">
+            <span class="cb-badge">Gather your friends</span>
+            <span class="cb-meta">Three private one-hour sessions · 3 to 6 participants · pricing varies by group size</span>
+          </div>
+          <h4>Create Your Own Private Relaxation Series</h4>
+          <p>Gather a group of friends and create a private three-session relaxation series designed especially for you. Your group can choose a shared focus based on what you are experiencing or what you would like more support with. Each session combines guided hypnosis, visualization, breathing, relaxation, and simple self-hypnosis techniques that you can continue using at home.</p>
+          <ul class="cb-list">
+            <li>Women's wellness and nervous system regulation</li>
+            <li>Pregnancy relaxation and connection</li>
+            <li>Preparing for labor and birth</li>
+            <li>Postpartum wellbeing</li>
+            <li>Parenting and changing family responsibilities</li>
+            <li>Caregiving and making time for yourself</li>
+            <li>Busy careers, leadership, and managing daily demands</li>
+            <li>Perimenopause or menopause</li>
+            <li>Empty nesting or other life transitions</li>
+            <li>Confidence, personal growth, rest, or reconnecting with yourself</li>
+            <li>General relaxation and stress reduction</li>
+          </ul>
+          <p class="cb-fine">No previous experience with hypnosis is needed. Dates and times are arranged with your group. Contact us to discuss your chosen focus, group size, availability, and pricing.</p>
+        </div>
+        <a class="btn btn-clay" href="#contact">Plan a Private Series</a>
+      </div>
+
+      <div class="panel-cta">
+        <div class="pc-text">
+          <h4>Let's begin with you</h4>
+          <p>You do not need to have everything figured out before reaching out. We would be happy to talk about what you are looking for and how private sessions or a small group may support you.</p>
+        </div>
+        <div class="pc-actions">
+          <a class="btn btn-clay" href="tel:+19788861869">Call or Text 978.886.1869</a>
+          <a class="btn btn-ghost" href="mailto:fertilitycollectiveinfo@gmail.com">Email Jacqui</a>
+        </div>
+      </div>
+      <p class="panel-fine">Our services provide educational and emotional support and complement your healthcare. They do not replace medical or mental health assessment or treatment.</p>
+    </div>
+
+    <!-- Partner referral — Circle&Bloom guided meditation programs (applies to every stage, so it sits below the tabs) -->
     <div class="consult-banner partner reveal">
       <div class="cb-main">
         <div class="cb-tags">
@@ -777,7 +1353,10 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <a href="#offerings">Offerings</a>
+        <a href="#fertility">Fertility</a>
+        <a href="#pregnancy">Pregnancy &amp; Birth</a>
+        <a href="#postpartum">Postpartum</a>
+        <a href="#wellness">Women's Wellness</a>
         <a href="#support">Free Support Group</a>
         <a href="#how">How It Helps</a>
         <a href="#about">About Jacqui</a>
@@ -806,6 +1385,7 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
   </div>
 </footer>
 
+
 <script>
 (function(){
   // year
@@ -831,6 +1411,63 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
   } else {
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
+
+  /* ---------- offerings tabs ----------
+     One button per stage (role="tab") controls the panel whose id matches its
+     aria-controls. Arrow keys move between tabs. The URL hash mirrors the open
+     tab, so #postpartum (or a link to something inside a panel, like #support)
+     opens the right tab even though hidden panels can't be scrolled to natively. */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab[role="tab"]'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel[role="tabpanel"]'));
+
+  function activateTab(id, opts){
+    opts = opts || {};
+    var match = null;
+    tabs.forEach(function(t){
+      var on = t.getAttribute('aria-controls') === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      if(on) match = t;
+    });
+    if(!match) return false;
+    panels.forEach(function(p){ p.classList.toggle('active', p.id === id); });
+    if(opts.updateHash && history.replaceState){ history.replaceState(null, '', '#' + id); }
+    if(opts.focus){ match.focus(); }
+    return true;
+  }
+
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ activateTab(t.getAttribute('aria-controls'), {updateHash:true}); });
+    t.addEventListener('keydown', function(e){
+      var idx;
+      if(e.key === 'ArrowRight' || e.key === 'ArrowDown') idx = (i + 1) % tabs.length;
+      else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') idx = (i - 1 + tabs.length) % tabs.length;
+      else if(e.key === 'Home') idx = 0;
+      else if(e.key === 'End') idx = tabs.length - 1;
+      else return;
+      e.preventDefault();
+      activateTab(tabs[idx].getAttribute('aria-controls'), {updateHash:true, focus:true});
+    });
+  });
+
+  function openFromHash(smooth){
+    var id = (location.hash || '').slice(1);
+    if(!id) return;
+    var el = document.getElementById(id);
+    if(!el || !el.closest) return;
+    var panel = el.closest('.panel[role="tabpanel"]');
+    if(!panel) return;                       // a normal anchor — let the browser handle it
+    activateTab(panel.id);
+    // The panel was display:none when the browser tried to jump, so scroll now.
+    // A link to the tab itself lands on the tab bar; a link to something inside
+    // the panel (e.g. #support) lands on that element.
+    var target = (panel.id === id) ? document.getElementById('offerings') : el;
+    requestAnimationFrame(function(){
+      target.scrollIntoView({behavior: smooth ? 'smooth' : 'auto', block:'start'});
+    });
+  }
+  openFromHash(false);
+  window.addEventListener('hashchange', function(){ openFromHash(true); });
 
   // contact form: Formspree if configured, else mailto fallback
   var form = document.getElementById('contactForm');
@@ -875,15 +1512,22 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
   /* ---------- live class dates from a published Google Sheet (optional) ----------
      The HTML already contains the current dates as a fallback. If a sheet URL is
      configured and reachable, those chips get replaced with the sheet's contents.
-     Sheet layout: one column per group. Each column is matched to a group by its
-     header text (row 1), so column order is flexible and an older two-column sheet
-     ("Fertility", "Pregnancy") still fills the weekday tracks correctly:
-        header has "fertility" + "saturday"  -> fertility-sat
-        header has "fertility"               -> fertility-wed
-        header has "pregnancy" + "saturday"  -> pregnancy-sat
-        header has "pregnancy"               -> pregnancy-thu
-     Row 1 is the header and is skipped. Each non-empty cell becomes one chip;
-     commas inside a cell are shown as " · " (so Jacqui types "Sep 9, 16, 23"). */
+
+     Sheet layout: one column per series. Row 1 is the header; each column is
+     matched to a date box on the page by its header text:
+       - a PROGRAM word:  Fertility · Pregnancy (or Birth) · Postpartum ·
+                          Wellness · Menopause · Support (the free support group)
+       - optionally a DAY: Monday … Sunday (any spelling that starts with the
+                          first three letters works)
+     e.g. "Fertility - Wednesday" → the Wednesday box in the fertility card,
+          "Postpartum - Tuesday"  → a Tuesday box in the postpartum card.
+     If the page has a box for that exact program+day it is filled in. If the
+     program's card only has a placeholder box ("schedule to be announced"), the
+     first sheet column for that program claims it and the header's day/time text
+     becomes its label; further columns for the same program get a new box added
+     below. So Jacqui can launch a new series by adding a column — no HTML edit.
+     Each non-empty cell becomes one chip; commas inside a cell are shown as
+     " · " (so Jacqui types "Sep 9, 16, 23"). */
   var SHEET_CSV_URL = (window.SHEET_CSV_URL || '').trim();
   // Be forgiving about the Google Sheets URL form:
   //  - gviz links (…/gviz/tq?tqx=out:csv) already request CSV — leave them alone
@@ -912,8 +1556,61 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     return rows;
   }
 
-  function renderChips(series, chips){
-    var grid = document.querySelector('.date-grid[data-series="' + series + '"]');
+  // Program words, checked in order (first match wins). "support" goes first so
+  // "Fertility Support Group" lands on the support group, not the fertility series.
+  var PROGRAMS = [
+    ['support',    /support/],
+    ['fertility',  /fertil/],
+    ['postpartum', /post\s*-?\s*partum/],
+    ['pregnancy',  /pregnan|birth/],
+    ['menopause',  /menopaus/],
+    ['wellness',   /wellness/]
+  ];
+
+  // Decide which date box a sheet column belongs to, based on its header text.
+  function seriesForHeader(header){
+    var h = (header || '').toLowerCase().trim();
+    var program = null;
+    for(var i = 0; i < PROGRAMS.length; i++){ if(PROGRAMS[i][1].test(h)){ program = PROGRAMS[i][0]; break; } }
+    if(!program) return null;
+    var day = h.match(/\b(mon|tue|wed|thu|fri|sat|sun)/);
+    // Label = whatever follows the program word, e.g. "Postpartum - Tuesday 6 to 7pm" → "Tuesday 6 to 7pm".
+    // Only used when the page doesn't already have a labelled box for this column.
+    var label = header.replace(/^[^-–:]*[-–:]\s*/, '').trim();
+    return {
+      program: program,
+      key: day ? program + '-' + day[1] : program,
+      label: (label && label !== header.trim()) ? label : ''
+    };
+  }
+
+  // Find (or create) the .date-grid a sheet column should fill.
+  function gridFor(info){
+    var grid = document.querySelector('[data-series="' + info.key + '"]');
+    if(grid) return grid;                                            // exact program+day box
+    var box = document.querySelector('.dates[data-program="' + info.program + '"]');
+    if(!box) return document.querySelector('[data-series="' + info.program + '"]'); // e.g. support-group chips
+    // Prefer an unfilled placeholder box in this program's card; otherwise add a new box.
+    var tba = box.querySelector('.date-chip.tba');
+    var lab;
+    if(tba){
+      grid = tba.parentNode;
+      lab = grid.parentNode.querySelector('.dlabel');
+      // keep the page's own label unless the header supplies day/time text
+      if(lab && (info.label || lab.classList.contains('tba'))){ lab.textContent = info.label || 'Small group'; lab.classList.remove('tba'); }
+    } else {
+      var group = document.createElement('div');
+      group.className = 'date-group';
+      group.innerHTML = '<div class="dlabel"></div><div class="date-grid"></div>';
+      box.appendChild(group);
+      grid = group.querySelector('.date-grid');
+      group.querySelector('.dlabel').textContent = info.label || 'Small group';
+    }
+    grid.setAttribute('data-series', info.key);                       // claim it for this column
+    return grid;
+  }
+
+  function renderChips(grid, chips){
     if(!grid || !chips.length) return; // keep HTML fallback if nothing usable
     grid.innerHTML = '';
     chips.forEach(function(txt){
@@ -926,34 +1623,26 @@ footer{background:var(--sage);color:rgb(61 58 49 /.82);padding:54px 0 30px}
     });
   }
 
-  // Decide which group a sheet column belongs to, based on its header text.
-  function seriesForHeader(header){
-    var h = (header || '').toLowerCase();
-    var prog = /pregnan/.test(h) ? 'pregnancy' : (/fertil/.test(h) ? 'fertility' : null);
-    if(!prog) return null;
-    var sat = /sat/.test(h);
-    if(prog === 'fertility') return sat ? 'fertility-sat' : 'fertility-wed';
-    return sat ? 'pregnancy-sat' : 'pregnancy-thu';
-  }
-
   if(SHEET_CSV_URL){
     fetch(SHEET_CSV_URL, {cache:'no-store'})
       .then(function(r){ if(!r.ok) throw new Error('sheet ' + r.status); return r.text(); })
       .then(function(csv){
         var rows = parseCSV(csv);
         if(rows.length < 2) return;     // header only / empty → keep fallback
-        // Map each column to a group using its header, then collect each column's
+        // Map each column to a series using its header, then collect each column's
         // non-empty cells in order.
-        var colSeries = rows[0].map(seriesForHeader);
-        var buckets = {};               // series key -> array of cell strings
-        rows.slice(1).forEach(function(r){
-          colSeries.forEach(function(series, idx){
-            if(!series) return;
+        var cols = rows[0].map(seriesForHeader);
+        var buckets = [];               // one {info, chips} per recognised column
+        cols.forEach(function(info, idx){
+          if(!info) return;
+          var chips = [];
+          rows.slice(1).forEach(function(r){
             var val = (r[idx] || '').trim();
-            if(val){ (buckets[series] = buckets[series] || []).push(val); }
+            if(val) chips.push(val);
           });
+          if(chips.length) buckets.push({info: info, chips: chips});
         });
-        Object.keys(buckets).forEach(function(series){ renderChips(series, buckets[series]); });
+        buckets.forEach(function(b){ renderChips(gridFor(b.info), b.chips); });
       })
       .catch(function(){ /* unreachable/misconfigured → silently keep the baked-in dates */ });
   }
